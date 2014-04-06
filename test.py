@@ -25,3 +25,35 @@ def test_sane_dictionary():
     for entry in nettalk_data.dictionary():
         assert len(entry) == 4
         assert all( len(field) > 0 for field in entry )
+
+def test_wordstream():
+    stream = nettalk_data.wordstream()
+    assert stream.next() == ['---aard', '--aardv', '-aardva', 
+                             'aardvar', 'ardvark', 'rdvark-', 
+                             'dvark--', 'vark---']
+
+def test_wordstream_windowsize():
+    stream = nettalk_data.wordstream(windowsize=6)
+    assert stream.next() == ['---aar', '--aard', '-aardv', 
+                             'aardva', 'ardvar', 'rdvark',
+                             'dvark-', 'vark--']
+
+def test_wordstream_length():
+    stream = nettalk_data.wordstream()
+    assert len(list(stream)) == 20007
+
+
+def test_wordstream_custom_entries():
+    class entry_looking_thing(object):
+        def __init__(self, word):
+            self.word = word
+
+    custom_entries = [
+        entry_looking_thing(word)
+        for word in ('aardvark', 'aback', 'abacus', 'anathema')
+    ]
+
+    stream = nettalk_data.wordstream(input_entries=custom_entries)
+    for entry, wordsalad in zip(custom_entries, stream):
+        assert len(entry.word) == len(wordsalad)
+

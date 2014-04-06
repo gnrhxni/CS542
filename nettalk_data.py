@@ -15,6 +15,34 @@ def dictionary(datafile=defaultdatafile):
             if match:
                 yield Dictionary_Element._make(match.groups())
 
+
+def wordstream(windowsize=7, input_entries=None, padchar='-'):
+    """Note: middle of each window is (windowsize/2)+1, since python
+    automatically floors uneven integer division.
+    """
+    even = bool(windowsize % 2 == 0)
+    if even:
+        lmargin, rmargin = windowsize/2, windowsize/2
+    if not even:
+        lmargin, rmargin = windowsize/2, (windowsize/2)+1
+
+    if not input_entries:
+        input_entries = dictionary()
+
+    for entry in input_entries:
+        word = entry.word
+        ret = list()
+        for i in range(len(word)):
+            chunk = word[max(i-lmargin,0):i+rmargin]
+            lpad = -min(i-lmargin, 0)
+            rpad = windowsize - len(chunk) - lpad
+            ret.append( 
+                padchar*(lpad) + chunk + padchar*(rpad)
+            )
+                
+        yield ret
+
+
 topK = [
 'THE','OF','AND','TO','IN',
 'THAT','IS','WAS','HE','FOR',

@@ -1,6 +1,8 @@
 import os
 import re
 from collections import namedtuple
+import numpy as np
+import csv
 
 Dictionary_Element = namedtuple("Dictionary_Element", 
                                 "word phonemes stress flag")
@@ -41,6 +43,47 @@ def wordstream(windowsize=7, input_entries=None, padchar='-'):
             )
                 
         yield ret
+
+(features, countf) = createFeatureTable('phoneme.to.feature.table.csv');
+(stressfeatures, countsf) = createFeatureTable('stress.to.feature.table.csv');
+NUMOUTPUTS = countf + countsf + 2;
+FOREIGN = NUMOUTPUTS - 1;
+WEIRD = NUMOUTPUTS - 2;
+
+
+def createFeatureTable(filename):
+    features = dict();
+    featureToUnit = dict();
+    csvfile =  open(filename, 'r');
+    reader = csv.reader(csvfile, delimiter=',', quotechar='"');
+    for row in reader: 
+        for i in range(3,len(row)):
+            if (row[i] not in featureToUnit and len(row[i]):
+                featureToUnit[row[i]] = len(featureToUnit);
+    csvfile.seek(0);
+    reader = csv.reader(csvfile, delimiter=',', quotechar='"');
+    for row in reader: 
+        grapheme = row[0];
+        assert(1 == len(grapheme), "Incorrect data", row);
+        for i in range(3,len(row)):
+            if (len(row[i])):
+                intfeature = featureToUnit[row[i]];
+                features[grapheme].append(intfeature);
+    return (features, len(featureToUnit));   
+
+
+def outputUnits(entry):
+  ret = np.zeros(len(entry.word), NUMOUTPUTS)
+  for i in range(entry.word):
+    phoneme = entry.phonemes[i];
+    features = features[phoneme];
+    for i in features: ret[i][feature] = 1;
+    features = stressFeatures[entry.stress[i]];
+    for i in features: ret[i][MINSTRESS + feature] = 1;
+    if (1 == entry.flag): ret[i][WEIRD] = 1;
+    elif (2 == entry.flag): ret[i][FOREIGN] = 1;
+  return ret;
+    
 
 
 topK = [

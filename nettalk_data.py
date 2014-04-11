@@ -1,5 +1,8 @@
+#/usr/bin/python
+
 import os
 import re
+import sys
 from collections import namedtuple
 import numpy as np
 import csv
@@ -9,6 +12,14 @@ Dictionary_Element = namedtuple("Dictionary_Element",
 
 here = os.path.dirname(os.path.abspath(__file__))
 defaultdatafile = os.path.join(here, "nettalk.data")
+
+def testit():
+  for entry in dictionary():
+    print(entry.word); 
+    outarray = outputUnits(entry);
+    print(outarray);
+    sys.exit(1);
+
 
 def dictionary(datafile=defaultdatafile):
     with open(datafile) as data_fp:
@@ -44,11 +55,6 @@ def wordstream(windowsize=7, input_entries=None, padchar='-'):
                 
         yield ret
 
-(features, countf) = createFeatureTable('phoneme.to.feature.table.csv');
-(stressfeatures, countsf) = createFeatureTable('stress.to.feature.table.csv');
-NUMOUTPUTS = countf + countsf + 2;
-FOREIGN = NUMOUTPUTS - 1;
-WEIRD = NUMOUTPUTS - 2;
 
 
 def createFeatureTable(filename):
@@ -57,14 +63,18 @@ def createFeatureTable(filename):
     csvfile =  open(filename, 'r');
     reader = csv.reader(csvfile, delimiter=',', quotechar='"');
     for row in reader: 
+        if (1 != len(row[0])): continue;
         for i in range(3,len(row)):
-            if (row[i] not in featureToUnit and len(row[i]):
+            if (row[i] not in featureToUnit and len(row[i])):
                 featureToUnit[row[i]] = len(featureToUnit);
+    print(featureToUnit);
     csvfile.seek(0);
     reader = csv.reader(csvfile, delimiter=',', quotechar='"');
     for row in reader: 
         grapheme = row[0];
-        assert(1 == len(grapheme), "Incorrect data", row);
+        if (1 != len(grapheme)): continue;
+        if (grapheme not in features):
+          features[grapheme] = [];
         for i in range(3,len(row)):
             if (len(row[i])):
                 intfeature = featureToUnit[row[i]];
@@ -72,20 +82,33 @@ def createFeatureTable(filename):
     return (features, len(featureToUnit));   
 
 
+
+articFeatureNames = {'Pause': 27, 'Full Stop': 28, 'Silent': 25, 'Glide': 13, 'Palatal': 20, 'Nasal': 18, 'Unvoiced': 10, 'Low': 0, 'Alveolar': 8, 'Medium': 6, 'Dental': 16, 'Stop': 5, 'Central1': 21, 'Tensed': 1, 'Central2': 2, 'Front1': 15, 'Front2': 9, 'Central': 24, 'Liquid': 17, 'Velar': 7, 'Back2': 19, 'Elide': 26, 'Back1': 23, 'Fricative': 11, 'Labial': 4, 'High': 14, 'Affricative': 22, 'Glottal': 12, 'Voiced': 3}
+
+articFeatures = {'!': [10, 4, 16, 22], '#': [3, 20, 7, 22], '*': [3, 13, 15, 0, 21, 24], '-': [25, 26], '.': [27, 28], 'A': [6, 1, 9, 21], '@': [0, 9], 'C': [10, 20, 22], 'E': [6, 15, 9], 'D': [3, 16, 11], 'G': [3, 7, 18], 'I': [14, 15], 'K': [10, 20, 11, 7, 22], 'J': [3, 7, 18], 'M': [3, 16, 18], 'L': [3, 8, 17], 'O': [6, 1, 21, 2], 'N': [3, 20, 18], 'Q': [3, 4, 7, 22, 5], 'S': [10, 20, 11], 'R': [3, 7, 17], 'U': [14, 23], 'T': [10, 16, 11], 'Y': [14, 1, 15, 9, 21], 'X': [10, 22, 9, 21], 'Z': [3, 20, 11], '_': [27, 26], '^': [0, 24], 'a': [0, 1, 2], 'c': [6, 7], 'b': [3, 4, 5], 'e': [6, 1, 9], 'd': [3, 8, 5], 'g': [3, 7, 5], 'f': [10, 4, 11], 'i': [14, 1, 15], 'h': [10, 12, 13], 'k': [10, 7, 5], 'm': [3, 4, 18], 'l': [3, 16, 17], 'o': [6, 1, 19], 'n': [3, 8, 18], 's': [10, 8, 11], 'r': [3, 20, 17], 'u': [14, 1, 19], 't': [10, 8, 5], 'w': [3, 4, 13, 14, 6, 1, 2, 23], 'v': [3, 4, 11], 'y': [3, 20, 13], 'x': [6, 2], 'z': [3, 8, 11], '|': [14, 15, 9]}
+
+stressFeatureNames = {'boundary': 4, 'right': 0, 'weak': 3, 'strong': 2, 'left': 1}
+
+stressFeatures = {'1': [2, 3], '0': [3], '2': [2], '<': [0], '_': [0, 1, 4], '>': [1]}
+
+MINSTRESS = len(articFeatureNames);
+NUMOUTPUTS = MINSTRESS + len(stressFeatureNames) + 2;
+FOREIGN = NUMOUTPUTS - 1;
+WEIRD = NUMOUTPUTS - 2;
+
 def outputUnits(entry):
-  ret = np.zeros(len(entry.word), NUMOUTPUTS)
-  for i in range(entry.word):
+  ret = np.zeros((len(entry.word), NUMOUTPUTS), np.int8)
+  for i in range(len(entry.word)):
     phoneme = entry.phonemes[i];
-    features = features[phoneme];
-    for i in features: ret[i][feature] = 1;
+    features = articFeatures[phoneme];
+    for f in features: ret[i][f] = 1;
     features = stressFeatures[entry.stress[i]];
-    for i in features: ret[i][MINSTRESS + feature] = 1;
+    for f in features: ret[i][MINSTRESS + f] = 1;
     if (1 == entry.flag): ret[i][WEIRD] = 1;
     elif (2 == entry.flag): ret[i][FOREIGN] = 1;
+    print (phoneme, " ", ret[i]);
   return ret;
     
-
-
 topK = [
 'THE','OF','AND','TO','IN',
 'THAT','IS','WAS','HE','FOR',

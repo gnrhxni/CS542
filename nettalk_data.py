@@ -14,11 +14,11 @@ here = os.path.dirname(os.path.abspath(__file__))
 defaultdatafile = os.path.join(here, "nettalk.data")
 
 def testit():
-  for entry in dictionary():
-    print(entry.word); 
-    outarray = outputUnits(entry);
-    print(outarray);
-    sys.exit(1);
+    for entry in dictionary():
+        print(entry.word); 
+        outarray = outputUnits(entry);
+        print(outarray);
+        sys.exit(1);
 
 
 def dictionary(datafile=defaultdatafile):
@@ -97,17 +97,21 @@ FOREIGN = NUMOUTPUTS - 1;
 WEIRD = NUMOUTPUTS - 2;
 
 def outputUnits(entry):
-  ret = np.zeros((len(entry.word), NUMOUTPUTS), np.int8)
-  for i in range(len(entry.word)):
-    phoneme = entry.phonemes[i];
-    features = articFeatures[phoneme];
-    for f in features: ret[i][f] = 1;
-    features = stressFeatures[entry.stress[i]];
-    for f in features: ret[i][MINSTRESS + f] = 1;
-    if (1 == entry.flag): ret[i][WEIRD] = 1;
-    elif (2 == entry.flag): ret[i][FOREIGN] = 1;
-    print (phoneme, " ", ret[i]);
-  return ret;
+    ret = np.zeros((len(entry.word), NUMOUTPUTS), np.int8)
+    for i in range(len(entry.word)):
+        phoneme = entry.phonemes[i];
+        features = articFeatures[phoneme];
+        for f in features: 
+            ret[i][f] = 1;
+        features = stressFeatures[entry.stress[i]];
+        for f in features: 
+            ret[i][MINSTRESS + f] = 1;
+        if (1 == entry.flag): 
+            ret[i][WEIRD] = 1;
+        elif (2 == entry.flag): 
+            ret[i][FOREIGN] = 1;
+        print(phoneme, " ", ret[i]);
+    return ret;
     
 topK = [
 'THE','OF','AND','TO','IN',

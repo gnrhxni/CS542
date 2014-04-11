@@ -57,3 +57,14 @@ def test_wordstream_custom_entries():
     for entry, wordsalad in zip(custom_entries, stream):
         assert len(entry.word) == len(wordsalad)
 
+
+def test_articFeatureNames_length():
+    # not sure that 29 is right
+    assert len(nettalk_data.articFeatureNames) == 29
+
+def test_stressFeatureNames_length():
+    assert len(nettalk_data.stressFeatureNames) == 5
+
+def test_stressFeatures_length():
+    assert len(nettalk_data.stressFeatures) == 6
+

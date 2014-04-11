@@ -1,0 +1,6 @@
+"<","Syllable","Boundary","right",,,,,
+">","Syllable","Boundary","left",,,,,
+"1","Primary","Stress","strong","weak",,,,
+"2","Secondary","Stress","strong",,,,,
+"0","Tertiary","Stress","weak",,,,,
+"_","Word","Boundary","right","left","boundary",,,

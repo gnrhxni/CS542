@@ -112,8 +112,8 @@ def outputUnits(entry):
 
 
 def convertToBinary(words=None):
-    representation = list()
     for word in words:
+        representation = list()
         word = word.lower()
         for letter in word:
             for i in range(29):

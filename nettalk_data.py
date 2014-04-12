@@ -12,6 +12,7 @@ Dictionary_Element = namedtuple("Dictionary_Element",
 
 here = os.path.dirname(os.path.abspath(__file__))
 defaultdatafile = os.path.join(here, "nettalk.data")
+topKDatafile = os.path.join(here, "top1000.data")
 
 def testit():
     for entry in dictionary():

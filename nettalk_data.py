@@ -67,6 +67,11 @@ def wordstream(windowsize=7, input_entries=None, padchar=' '):
                 
         yield ret
 
+def binarystream(**kwds):
+    return iter( 
+        list( convertToBinary(wordsalad) )
+        for wordsalad in wordstream(**kwds) 
+    )
 
 def createFeatureTable(filename):
     features = dict();

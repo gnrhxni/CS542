@@ -1,4 +1,6 @@
 
+from itertools import chain
+
 import nettalk_data
 
 def test_dictionary_len():
@@ -67,3 +69,32 @@ def test_stressFeatureNames_length():
 
 def test_stressFeatures_length():
     assert len(nettalk_data.stressFeatures) == 6
+
+def test_convertToBinary():
+    alphabet_length = len(nettalk_data.letterToPos)
+    for word in 'bright couple dinner political over loss size truth'.split():
+        binrepr = list(
+            chain( *nettalk_data.convertToBinary(word) )
+        )
+        assert binrepr.count(1) == len(word)
+        assert binrepr.count(0) == (alphabet_length-1) * len(word)
+
+
+def test_binarystream():
+    alpha = nettalk_data.letterToPos
+    allwords = nettalk_data.dictionary()
+    somewords = [ allwords.next() for _ in range(5) ]
+    wordstream = nettalk_data.wordstream(input_entries=somewords)
+    binarystream = nettalk_data.binarystream(input_entries=somewords)
+    wordstream, binarystream = list(wordstream), list(binarystream)
+
+    assert len(wordstream) == len(binarystream)
+
+    for entry, wordsalad, binarysalad in zip(
+            somewords, wordstream, binarystream):
+        assert len(wordsalad) == len(binarysalad) == len(entry.word)
+
+        for wordwindow, binarywindow in zip(wordsalad, binarysalad):
+            assert len(wordwindow) == len(binarywindow)/len(alpha)
+
+

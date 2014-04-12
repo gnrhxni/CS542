@@ -197,16 +197,16 @@ letterToPos = {
 '.': 28}
 
 def convertToBinary(words=None):
-  representation = list()
-  for word in words:
-    word = word.lower()
-    for letter in word:
-      for i in range(29):
-        if i == letterToPos[letter]:
-          representation.append(1)
-        else:
-          representation.append(0)
-  yield representation
+    representation = list()
+    for word in words:
+        word = word.lower()
+        for letter in word:
+            for i in range(29):
+                if i == letterToPos[letter]:
+                    representation.append(1)
+                else:
+                    representation.append(0)
+        yield representation
 
     
 topK = [

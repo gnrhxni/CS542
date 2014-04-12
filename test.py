@@ -28,15 +28,15 @@ def test_sane_dictionary():
 
 def test_wordstream():
     stream = nettalk_data.wordstream()
-    assert stream.next() == ['---aard', '--aardv', '-aardva', 
-                             'aardvar', 'ardvark', 'rdvark-', 
-                             'dvark--', 'vark---']
+    assert stream.next() == ['   aard', '  aardv', ' aardva', 
+                             'aardvar', 'ardvark', 'rdvark ', 
+                             'dvark  ', 'vark   ']
 
 def test_wordstream_windowsize():
     stream = nettalk_data.wordstream(windowsize=6)
-    assert stream.next() == ['---aar', '--aard', '-aardv', 
+    assert stream.next() == ['   aar', '  aard', ' aardv', 
                              'aardva', 'ardvar', 'rdvark',
-                             'dvark-', 'vark--']
+                             'dvark ', 'vark  ']
 
 def test_wordstream_length():
     stream = nettalk_data.wordstream()
@@ -67,4 +67,3 @@ def test_stressFeatureNames_length():
 
 def test_stressFeatures_length():
     assert len(nettalk_data.stressFeatures) == 6
-

@@ -112,7 +112,6 @@ def outputUnits(entry):
             ret[i][WEIRD] = 1;
         elif (2 == entry.flag): 
             ret[i][FOREIGN] = 1;
-        print(phoneme, " ", ret[i]);
     return ret;
 
 

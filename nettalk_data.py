@@ -118,7 +118,7 @@ def closestByDotProduct(features, compareDict):
 		for on in compareDict[k]: f[on] = 1;
         #Actually, we should also divide below by sqrt(norm(features)), but we don't care because we are just trying to compare across possible fs, and that's a constant. We should save the f vectors and the norms for all the phonemes in some dict so we don't have to recalculate them.
 		cos = np.dot(f,features) / sqrt(np.dot(f,f));
-		print("%s\n%s %.2f %s" % ((features*10).astype(int), (f*10).astype(int), cos, k));
+		#print("%s\n%s %.2f %s" % ((features*10).astype(int), (f*10).astype(int), cos, k));
 		if (cos > maxcos):
 			maxcos = cos;
 			best = k;

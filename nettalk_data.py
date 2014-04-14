@@ -5,13 +5,13 @@ import sys
 from collections import namedtuple
 import numpy as np
 import csv
+from math import sqrt
 
 from constants import (
     topK,
-    WEIRD,
-    FOREIGN,
     MINSTRESS,
     NUMOUTPUTS,
+    NUMINPUTS,
     letterToPos,
     topKDatafile,
     articFeatures,
@@ -108,12 +108,23 @@ def outputUnits(entry):
         features = stressFeatures[entry.stress[i]];
         for f in features: 
             ret[i][MINSTRESS + f] = 1;
-        if (1 == entry.flag): 
-            ret[i][WEIRD] = 1;
-        elif (2 == entry.flag): 
-            ret[i][FOREIGN] = 1;
     return ret;
 
+def closestByDotProduct(features, compareDict):
+	maxcos = 0;
+	best = '';
+	for k in compareDict.keys():
+		f = np.zeros(len(features));
+		for on in compareDict[k]: f[on] = 1;
+        #Actually, we should also divide below by sqrt(norm(features)), but we don't care because we are just trying to compare across possible fs, and that's a constant. We should save the f vectors and the norms for all the phonemes in some dict so we don't have to recalculate them.
+		cos = np.dot(f,features) / sqrt(np.dot(f,f));
+		#print("%s\n%s %.2f %s" % ((features*10).astype(int), (f*10).astype(int), cos, k));
+		if (cos > maxcos):
+			maxcos = cos;
+			best = k;
+	return best;
+        
+     	
 
 def convertToBinary(words=None):
     for word in words:

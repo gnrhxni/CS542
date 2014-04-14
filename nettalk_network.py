@@ -1,7 +1,7 @@
 
 import sys
 import logging
-from itertools import izip
+from itertools import izip, tee
 from optparse import make_option, OptionParser
 
 from pybrain.shortcuts import buildNetwork
@@ -38,15 +38,31 @@ def handle_cli():
     return OptionParser(option_list=OPTIONS,
                         description=HELP).parse_args()
 
+
+def generate_datasets(opts, networkshape):
+    input_entries, output_entries, debug_entries = tee(
+        nd.dictionary(datafile=opts.training_data), 3) 
+    inputstream = nd.binarystream(windowsize=opts.windowsize,
+                                  input_entries=input_entries)
+    outputstream = iter(nd.outputUnits(e) for e in output_entries)
+
+    for     target,       input_vectors, entry in izip(
+            outputstream, inputstream,   debug_entries):
+        log.debug("Generating dataset for %s", entry)
+        dataset = SupervisedDataSet(networkshape[0], networkshape[-1])
+        for i, input_vector in enumerate(input_vectors):
+            dataset.addSample(input_vector, target[i])
+        yield dataset
+
+
 def main():
-    
     opts, _ = handle_cli()
 
     log.setLevel(getattr(logging, opts.logging))
     log.debug("Enabled logging")
 
     networkshape = [ 
-        nd.letterToPos*opts.window_size, # input
+        len(nd.letterToPos)*opts.window_size, # input
         opts.nhidden,                    # hidden
         nd.NUMOUTPUTS,                   # output
     ]
@@ -68,18 +84,16 @@ def main():
         verbose=True
     )
 
-    entries = nd.dictionary(datafile=opts.training_data)
-    inputstream = nd.binarystream(windowsize=opts.windowsize,
-                                  input_entries=entries)
-    outputstream = iter(outputUnits(e) for e in entries)
-
-    for target, input_vectors in izip(outputstream, inputstream):
-        dataset = SupervisedDataSet(networkshape[0], networkshape[-1])
-        for input_vector in input_vectors:
-            dataset.addSample(input_vector)
-
-
-
+    datasets = generate_datasets(opts, networkshape)
+    for i, dataset in enumerate(datasets):
+        trainer.setData(dataset)
+        log.debug("Training dataset %d", i)
+        err = trainer.train()
+        log.debug("Trained to err %d", err)
+        
+    log.debug("Training complete; computing accuracy")
+    
+        
 
 if __name__ == '__main__':
     ret = main()

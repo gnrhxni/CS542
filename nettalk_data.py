@@ -8,10 +8,9 @@ import csv
 
 from constants import (
     topK,
-    WEIRD,
-    FOREIGN,
     MINSTRESS,
     NUMOUTPUTS,
+    NUMINPUTS,
     letterToPos,
     topKDatafile,
     articFeatures,

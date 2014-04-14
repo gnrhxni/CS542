@@ -3,6 +3,7 @@ import os
 here = os.path.dirname(os.path.abspath(__file__))
 defaultdatafile = os.path.join(here, "nettalk.data")
 topKDatafile = os.path.join(here, "top1000.data")
+WINDOWSIZE = 7
 
 articFeatureNames = {
     'Pause': 27,    'Full Stop': 28, 'Silent': 25, 
@@ -38,9 +39,7 @@ stressFeatures = {
 }
 
 MINSTRESS = len(articFeatureNames);
-NUMOUTPUTS = MINSTRESS + len(stressFeatureNames) + 2;
-FOREIGN = NUMOUTPUTS - 1;
-WEIRD = NUMOUTPUTS - 2;
+NUMOUTPUTS = MINSTRESS + len(stressFeatureNames);
 
 letterToPos = {
 'a' : 0,
@@ -72,6 +71,8 @@ letterToPos = {
 ' ' : 26,
 '-' : 27,
 '.': 28}
+
+NUMINPUTS = len(letterToPos) * WINDOWSIZE
 
 topK = [
 'THE','OF','AND','TO','IN',

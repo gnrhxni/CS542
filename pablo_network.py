@@ -13,40 +13,40 @@ from pybrain.datasets import SupervisedDataSet
 
 net = buildNetwork (NUMINPUTS, 80, NUMOUTPUTS, bias=True, outputbias=True, hiddenclass=SigmoidLayer, outclass=SigmoidLayer)
 trainer = BackpropTrainer(net, None, learningrate=1.0, verbose=True, batchlearning=True, weightdecay=0.0)                                        
-for cycle in range(5):
-  datafile = 'top1000.data';
-  for entry in dictionary(datafile):
-    #print("working on", entry);
-    outmatrix = outputUnits(entry);
-    whichletter = 0;
-    ds = SupervisedDataSet(NUMINPUTS, NUMOUTPUTS);
-    for letterContexts in wordstream(input_entries = (entry,)):
-      #print("letterContexts", letterContexts);
-      for inarray in convertToBinary(letterContexts):
-      	outarray = outmatrix[whichletter];
-	whichletter += 1
-      	#print("inarray",inarray);
-      	#print("outarray",outarray); 
-	#print("inlen %d outlen %d" % (len(inarray), len(outarray)));
-	ds.addSample(inarray, outarray);
-    trainer.setData(ds);
-    err = trainer.train();
-    print(err, " ", entry);
-    
-  #create input vectors
-  #create output vectors
 
-  #trainer.setData(ds)
-  #trainer.train()
-  #for each letter:
-  #  out = net.activate(input);
-  #  for each phoneme and each stress separately:
-  #        angle = dotprod(out, output)/(norm(out)*norm(output))
-  #    compare angles, pick the smallest.
-  #    add to accuracy measure.
-#accuracy is a vector with one element in [0,1] for each word that we have
-#trained so far that is the average of the accuracy for each letter. Actually 
+stressErrors=list();
+phonemeErrors=list();
+
+for cycle in range(5):
+	datafile = 'top1000.data';
+	for entry in dictionary(datafile):
+		print("working on", entry);
+		outmatrix = outputUnits(entry);
+		lpos = 0;
+		ds = SupervisedDataSet(NUMINPUTS, NUMOUTPUTS);
+		for letterContexts in wordstream(input_entries = (entry,)):
+			print("letterContexts", letterContexts);
+			for inarray in convertToBinary(letterContexts):
+				outarray = outmatrix[lpos];
+		#print("inarray",inarray);
+		#print("outarray",outarray); 
+	#print("inlen %d outlen %d" % (len(inarray), len(outarray)));
+				ds.addSample(inarray, outarray);
+				observed = net.activate(inarray);
+				phoneme = entry.phonemes[lpos];
+				observedPhoneme = closestByDotProduct(observed[:MINSTRESS], articFeatures);
+				phonemeErrors.append(bool(phoneme != observedPhoneme));
+				stress = entry.stress[lpos];
+				observedStress = closestByDotProduct(observed[MINSTRESS:], stressFeatures);
+				stressErrors.append(bool(stress != observedStress));
+				lpos += 1
+		trainer.setData(ds);
+		err = trainer.train();
+		print(err, " ", entry);
+	print("accuracy: phonemes %.3f stresses %.3f", 1 - np.mean(phonemeErrors), 1 - np.mean(stressErrors));
+
+    
+#accuracy is a vector with one element in {0,1} for each letter i
+#that we have #trained so far. 
 #make that two vectors, one for phoneme and one for stress.
-#endeachword
-#endeachtrainingcycle
 

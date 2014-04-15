@@ -62,6 +62,13 @@ def trainNetwork():
                 #determine the corresponding correct output and add the sample to the dataset
                 binary_output = output[char_pos]
                 ds.addSample(binary_input, binary_output)
+        trainer.setData(ds)
+        err = trainer.train()
+        for letter in wordstream(input_entries = (word,)):
+            #now convert these 7-character sequences into binary
+            for binary_input in convertToBinary(letter):
+                #determine the corresponding correct output and add the sample to the dataset
+                binary_output = output[char_pos]
                 network_output = neural_network.activate(binary_input)
                 phoneme = word.phonemes[char_pos]
                 stress = word.stress[char_pos]
@@ -77,8 +84,6 @@ def trainNetwork():
                 else:
                     stress_error.append(1)
                 char_pos = char_pos + 1
-        trainer.setData(ds)
-        err = trainer.train()
     print("Phoneme accuracy = ", np.mean(phoneme_error), " Stress accuracy = ", np.mean(stress_error))
 	
 def main():

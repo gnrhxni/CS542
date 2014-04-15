@@ -31,7 +31,22 @@ trainer = BackpropTrainer(
     verbose=True, 
     batchlearning=True, 
     weightdecay=0.0)
-
+	
+#pablos dot product function
+def closestByDotProduct(features, compareDict):
+	maxcos = 0;
+	best = '';
+	for k in compareDict.keys():
+		f = np.zeros(len(features));
+		for on in compareDict[k]: f[on] = 1;
+        #Actually, we should also divide below by sqrt(norm(features)), but we don't care because we are just trying to compare across possible fs, and that's a constant. We should save the f vectors and the norms for all the phonemes in some dict so we don't have to recalculate them.
+		cos = np.dot(f,features) / sqrt(np.dot(f,f));
+		#print("%s\n%s %.2f %s" % ((features*10).astype(int), (f*10).astype(int), cos, k));
+		if (cos > maxcos):
+			maxcos = cos;
+			best = k;
+	return best;
+        
 def trainNetwork():
     phoneme_error = list()
     stress_error = list()
@@ -50,21 +65,21 @@ def trainNetwork():
                 network_output = neural_network.activate(binary_input)
                 phoneme = word.phonemes[char_pos]
                 stress = word.stress[char_pos]
-                #calculate phoneme based on network outpu using dot product (still need to do)
-                #calculate stree based on network outpit using dot product (still need to do)
+                calculated_phoneme = closestByCrossProduct(network_output[:MINSTRESS], articFeatures])
+                calculated_stress = closestByCrossProduct(network_output[MINSTRESS:], stressFeatures])
                 if phoneme != calculated_phoneme:
-                    phoneme_error.append(1)
-                else:
                     phoneme_error.append(0)
+                else:
+                    phoneme_error.append(1)
 				
                 if stress != calculated_stress:
-                    stress_error.append(1)
-                else:
                     stress_error.append(0)
+                else:
+                    stress_error.append(1)
                 char_pos = char_pos + 1
         trainer.setData(ds)
         err = trainer.train()
-    print("Phoneme accuracy = ", (1 - np.mean(phoneme_error)), " Stress accuracy = ", (1 - np.mean(stress_error)))
+    print("Phoneme accuracy = ", np.mean(phoneme_error), " Stress accuracy = ", np.mean(stress_error))
 	
 def main():
     for i in range(ITERATIONS):

@@ -40,19 +40,39 @@ OPTIONS = [
                 "so many training iterations"),
     make_option('-p', '--passes', type=int,
                 default=1000, action='store', dest='npasses',
-                help="number of passes through the dataset to train")
+                help="number of passes through the dataset to train"),
+    make_option('-b', '--buffer', action='store_true', 
+                help="buffer the datafile in memory for speedier runtimes "+
+                "at the cost of greater memory usage")
 ]
 
 def handle_cli():
     return OptionParser(option_list=OPTIONS,
                         description=HELP).parse_args()
 
+_entries = None
+_inputstream = None
+_outputstream = None
 def datastreams(opts):
-    input_entries, output_entries, debug_entries = tee(
-        nd.dictionary(datafile=opts.training_data), 3) 
-    inputstream = nd.binarystream(windowsize=opts.windowsize,
-                                  input_entries=input_entries)
-    outputstream = iter(nd.outputUnits(e) for e in output_entries)
+    if opts.buffer:
+        global _entries
+        global _inputstream
+        global _outputstream
+        if _entries is None:
+            _entries = list(nd.dictionary(datafile=opts.training_data))
+            _inputstream = list(nd.binarystream(windowsize=opts.windowsize,
+                                                input_entries=_entries))
+            _outputstream = [ nd.outputUnits(e) for e in _entries ]
+        inputstream = _inputstream
+        outputstream = _outputstream
+        debug_entries = _entries
+    if not opts.buffer:
+        input_entries, output_entries, debug_entries = tee(
+            nd.dictionary(datafile=opts.training_data), 3) 
+
+        inputstream = nd.binarystream(windowsize=opts.windowsize,
+                                      input_entries=input_entries)
+        outputstream = iter(nd.outputUnits(e) for e in output_entries)
 
     return inputstream, outputstream, debug_entries
 

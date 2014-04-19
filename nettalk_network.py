@@ -124,9 +124,10 @@ def main():
         batchlearning=True, 
         weightdecay=0.0
     )
-    logging.debug("Determining base accuracy")
-    s_accuracy, p_accuracy = calculate_accuracy(opts, network)
-    print '%d\t%.3f\t%.3f' %(0, s_accuracy, p_accuracy)
+    if opts.accuracy_interval:
+        logging.debug("Determining base accuracy")
+        s_accuracy, p_accuracy = calculate_accuracy(opts, network)
+        print '%d\t%.3f\t%.3f' %(0, s_accuracy, p_accuracy)
 
     i = 0
     for pass_number in range(1, opts.npasses+1):
@@ -140,7 +141,7 @@ def main():
             err = trainer.train()
             logging.debug("Trained to err %f", err)
             
-            if i % opts.accuracy_interval == 0:
+            if opts.accuracy_interval and i % opts.accuracy_interval == 0:
                 s_accuracy, p_accuracy = calculate_accuracy(opts, network)
                 print '%d\t%.3f\t%.3f' %(i, s_accuracy, p_accuracy)
         

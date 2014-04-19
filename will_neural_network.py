@@ -24,6 +24,7 @@ neural_network = buildNetwork (
     outputbias=True, 
     hiddenclass=SigmoidLayer, 
     outclass=SigmoidLayer)
+#IMPORTANT: IF YOU WANT TO SET YOUR WEIGHTS TO -0.3 to 0.3, please use the following 4 lines
 newWeights = np.random.uniform(-0.3, 0.3, len(neural_network.params))
 print(newWeights)
 neural_network._setParameters(newWeights)

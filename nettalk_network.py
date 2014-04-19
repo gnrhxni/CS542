@@ -7,6 +7,7 @@ logging.basicConfig(
     format=r"[%(levelname)s %(created)f]: %(message)s"
 )
 
+import cPickle as pickle
 from itertools import izip, tee
 from optparse import make_option, OptionParser
 
@@ -40,7 +41,10 @@ OPTIONS = [
                 "so many training iterations"),
     make_option('-p', '--passes', type=int,
                 default=1000, action='store', dest='npasses',
-                help="number of passes through the dataset to train")
+                help="number of passes through the dataset to train"),
+    make_option('-s', '--save_to', default=None, action='store', 
+                help="Where to save the trained network")
+
 ]
 
 def handle_cli():
@@ -140,7 +144,8 @@ def main():
                 s_accuracy, p_accuracy = calculate_accuracy(opts, network)
                 print '%d\t%.3f\t%.3f' %(i, s_accuracy, p_accuracy)
         
-        
+    if opts.save_to:
+        pickle.dump(network, open(opts.save_to, 'wb'))
 
 if __name__ == '__main__':
     ret = main()

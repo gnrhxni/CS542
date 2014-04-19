@@ -7,11 +7,13 @@ logging.basicConfig(
     format=r"[%(levelname)s %(created)f]: %(message)s"
 )
 
+import cPickle as pickle
 from itertools import izip, tee
 from optparse import make_option, OptionParser
 
-from pybrain.tools.shortcuts import buildNetwork
-from pybrain.structure import SigmoidLayer
+from pybrain.structure.modules import SigmoidLayer, LinearLayer, BiasUnit
+from pybrain.structure.networks.feedforward import FeedForwardNetwork
+from pybrain.structure import FullConnection
 from pybrain.datasets import SupervisedDataSet
 from pybrain.supervised.trainers import BackpropTrainer
 
@@ -40,12 +42,52 @@ OPTIONS = [
                 "so many training iterations"),
     make_option('-p', '--passes', type=int,
                 default=1000, action='store', dest='npasses',
-                help="number of passes through the dataset to train")
+                help="number of passes through the dataset to train"),
+    make_option('-s', '--save_to', default=None, action='store', 
+                help="Where to save the trained network"),
+    make_option('-L', '--load_from', default=None, action='store', 
+                dest="load",
+                help="Where load a saved network")
 ]
 
 def handle_cli():
     return OptionParser(option_list=OPTIONS,
                         description=HELP).parse_args()
+
+def build_that_network(opts, networkshape):
+
+    if opts.load:
+        with open(opts.load, 'rb') as pickle_file:
+            params = pickle.load(pickle_file)
+        (inlayer, hiddenlayer, outlayer, biasunit,
+         in2hidden, hidden2out, bias2hidden, bias2out) = params
+    else:
+        inlayer = LinearLayer(networkshape[0], name='in')
+        hiddenlayer = SigmoidLayer(networkshape[1], name='hidden')
+        outlayer = SigmoidLayer(networkshape[2], name='out')
+        biasunit = BiasUnit(name='bias')
+
+        in2hidden = FullConnection(inlayer, hiddenlayer)
+        hidden2out = FullConnection(hiddenlayer, outlayer)
+        bias2hidden = FullConnection(biasunit, hiddenlayer)
+        bias2out = FullConnection(biasunit, outlayer)
+
+        params = (inlayer, hiddenlayer, outlayer, biasunit,
+                  in2hidden, hidden2out, bias2hidden, bias2out) 
+
+    that_network = FeedForwardNetwork()
+    that_network.addInputModule(inlayer)
+    that_network.addModule(hiddenlayer)
+    that_network.addOutputModule(outlayer)
+    that_network.addModule(biasunit)
+    that_network.addConnection(in2hidden)
+    that_network.addConnection(hidden2out)
+    that_network.addConnection(bias2hidden)
+    that_network.addConnection(bias2out)
+    that_network.sortModules()
+
+    return that_network, params
+
 
 def datastreams(opts):
     input_entries, output_entries, debug_entries = tee(
@@ -100,18 +142,13 @@ def main():
     logging.debug("Enabled logging")
 
     networkshape = [ 
-        len(nd.letterToPos)*opts.windowsize, # input
+        len(nd.letterToPos)*opts.windowsize,  # input
         opts.nhidden,                         # hidden
         nd.NUMOUTPUTS,                        # output
     ]
+
     logging.debug("Constructing network of shape %s", networkshape)
-    network = buildNetwork( 
-        *networkshape, 
-        bias=True, 
-        outputbias=True,
-        hiddenclass=SigmoidLayer,
-        outclass=SigmoidLayer
-    )
+    network, to_save = build_that_network(opts, networkshape)
     logging.debug("Instantiating trainer")
     trainer = BackpropTrainer(
         network, 
@@ -120,13 +157,14 @@ def main():
         batchlearning=True, 
         weightdecay=0.0
     )
-    logging.debug("Determining base accuracy")
-    s_accuracy, p_accuracy = calculate_accuracy(opts, network)
-    print '%d\t%.3f\t%.3f' %(0, s_accuracy, p_accuracy)
+    if opts.accuracy_interval:
+        logging.debug("Determining base accuracy")
+        s_accuracy, p_accuracy = calculate_accuracy(opts, network)
+        print '%d\t%.3f\t%.3f' %(0, s_accuracy, p_accuracy)
 
     i = 0
     for pass_number in range(1, opts.npasses+1):
-        logging.debug("Running pass %d", pass_number)
+        logging.info("Running pass %d", pass_number)
 
         datasets = generate_datasets(opts, networkshape)
         for dataset in datasets:
@@ -136,11 +174,14 @@ def main():
             err = trainer.train()
             logging.debug("Trained to err %f", err)
             
-            if i % opts.accuracy_interval == 0:
+            if opts.accuracy_interval and i % opts.accuracy_interval == 0:
                 s_accuracy, p_accuracy = calculate_accuracy(opts, network)
                 print '%d\t%.3f\t%.3f' %(i, s_accuracy, p_accuracy)
-        
-        
+    
+    if opts.save_to:
+        with open(opts.save_to, 'wb') as save_file:
+            pickle.dump(to_save, save_file)
+
 
 if __name__ == '__main__':
     ret = main()

@@ -104,7 +104,7 @@ def main():
     logging.debug("Enabled logging")
 
     networkshape = [ 
-        len(nd.letterToPos)*opts.windowsize, # input
+        len(nd.letterToPos)*opts.windowsize,  # input
         opts.nhidden,                         # hidden
         nd.NUMOUTPUTS,                        # output
     ]
@@ -131,7 +131,7 @@ def main():
 
     i = 0
     for pass_number in range(1, opts.npasses+1):
-        logging.debug("Running pass %d", pass_number)
+        logging.info("Running pass %d", pass_number)
 
         datasets = generate_datasets(opts, networkshape)
         for dataset in datasets:

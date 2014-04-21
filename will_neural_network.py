@@ -10,31 +10,30 @@ from nettalk_data import *
 from constants import *
 from pybrain.datasets import SupervisedDataSet
 from pybrain.supervised.trainers import BackpropTrainer
-from pybrain.structure.modules import SigmoidLayer 
+from pybrain.structure.modules import LinearLayer, SigmoidLayer, BiasUnit 
+from pybrain.structure.networks import FeedForwardNetwork
+from pybrain.structure import FullConnection
+from pybrain.datasets import SupervisedDataSet
+from sigmoidsparselayer import SigmoidSparseLayer
 from pybrain.tools.shortcuts import buildNetwork
+
+from nettalk_modules import *
 
 print("Setting up network")
 ITERATIONS = 10
-NUMINPUTS = 29*7
-neural_network = buildNetwork (
-    NUMINPUTS, 
-    80, 
-    NUMOUTPUTS, 
-    bias=True, 
-    outputbias=True, 
-    hiddenclass=SigmoidLayer, 
-    outclass=SigmoidLayer)
+modules = buildModules(NUMINPUTS, 80, NUMOUTPUTS)
+neural_network = buildnet(modules)
 #IMPORTANT: IF YOU WANT TO SET YOUR WEIGHTS TO -0.3 to 0.3, please use the following 4 lines
 newWeights = np.random.uniform(-0.3, 0.3, len(neural_network.params))
-print(newWeights)
+#print(newWeights)
 neural_network._setParameters(newWeights)
-print(neural_network.params)
+#print(neural_network.params)
 print("Setting up trainer")
 trainer = BackpropTrainer(
     neural_network, 
 	None, 
     learningrate=1.0, 
-    verbose=True, 
+    verbose=False, 
     batchlearning=True, 
     weightdecay=0.0)
 	  

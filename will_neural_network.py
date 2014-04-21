@@ -6,6 +6,7 @@ import sys
 import numpy
 import pybrain
 import math
+import time
 from nettalk_data import *
 from constants import *
 from pybrain.datasets import SupervisedDataSet
@@ -36,6 +37,44 @@ trainer = BackpropTrainer(
     verbose=False, 
     batchlearning=True, 
     weightdecay=0.0)
+
+
+def testOneWord(word, output=None):
+   """ Return (phoneme_error, stress_error) lists
+
+   The lists are parallel and indexed by letter position
+   in the input word, which must be a DictionaryEntry.
+   if output is missing, it is calculated, but it can also
+   be passed in to save time if we already have it"""
+   phoneme_error = list()
+   stress_error = list()
+   if (None == output): output = outputUnits(word)
+   char_pos = 0
+   for letter in wordstream(input_entries = (word,)):
+            #now convert these 7-character sequences into binary
+            for binary_input in convertToBinary(letter):
+                #determine the corresponding correct output and add the sample to the dataset
+                binary_output = output[char_pos]
+                network_output = neural_network.activate(binary_input)
+                phoneme = word.phonemes[char_pos]
+                stress = word.stress[char_pos]
+                calculated_phoneme = closestByDotProduct(network_output[:MINSTRESS], articFeatures)
+                calculated_stress = closestByDotProduct(network_output[MINSTRESS:], stressFeatures)
+                phoneme_error.append(bool(phoneme != calculated_phoneme))
+                stress_error.append(bool(stress != calculated_stress))
+                char_pos = char_pos + 1
+   return (phoneme_error, stress_error)
+
+def testWords(inputfile):
+    phoneme_error = list()
+    stress_error = list()
+    #loop through each word in our data, treating each one as a seperate dataset
+    for word in dictionary(inputfile):
+        (pherrors, serrors) = testOneWord(word);
+        phoneme_error.extend(pherrors);
+        stress_error.extend(serrors);
+    print("Generalization: phoneme %.3f stress %.3f" % ( 1-np.mean(phoneme_error), 1-np.mean(stress_error)) )
+    
 	  
 def trainNetwork():
     phoneme_error = list()
@@ -55,24 +94,20 @@ def trainNetwork():
                 char_pos+= 1
         trainer.setData(ds)
         err = trainer.train()
-        char_pos = 0
-        for letter in wordstream(input_entries = (word,)):
-            #now convert these 7-character sequences into binary
-            for binary_input in convertToBinary(letter):
-                #determine the corresponding correct output and add the sample to the dataset
-                binary_output = output[char_pos]
-                network_output = neural_network.activate(binary_input)
-                phoneme = word.phonemes[char_pos]
-                stress = word.stress[char_pos]
-                calculated_phoneme = closestByDotProduct(network_output[:MINSTRESS], articFeatures)
-                calculated_stress = closestByDotProduct(network_output[MINSTRESS:], stressFeatures)
-                phoneme_error.append(bool(phoneme != calculated_phoneme))		
-                stress_error.append(bool(stress != calculated_stress))	
-                char_pos = char_pos + 1
-    print("Phoneme accuracy = ", 1-np.mean(phoneme_error), " Stress accuracy = ", 1-np.mean(stress_error))
+        (pherrors, serrors) = testOneWord(word, output);
+        phoneme_error.extend(pherrors);
+        stress_error.extend(serrors);
+    print("Accuracy: phoneme %.3f stress %.3f" % ( 1-np.mean(phoneme_error), 1-np.mean(stress_error)) )
+
 	
 def main():
     for i in range(ITERATIONS):
+        start=time.time()
         trainNetwork()
-		
+        trained = time.time()
+        testWords('nettalk.data')
+        tested = time.time()
+        print("time to train ", trained - start, " to test ", tested - trained)
+        
+
 main()

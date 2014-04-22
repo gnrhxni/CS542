@@ -7,6 +7,7 @@ logging.basicConfig(
     format=r"[%(levelname)s %(created)f]: %(message)s"
 )
 
+import multiprocessing
 import cPickle as pickle
 from itertools import izip, tee
 from optparse import make_option, OptionParser
@@ -20,6 +21,7 @@ from pybrain.supervised.trainers import BackpropTrainer
 import numpy as np
 
 import nettalk_data as nd
+import nettalk_modules
 
 
 HELP="""Runs the network described in the Sejnowski paper and computes its
@@ -35,14 +37,17 @@ OPTIONS = [
                 help="set logging verbosity: DEBUG INFO WARN ERROR, CRITICAL"),
     make_option('-t', '--training_data', type=str, action='store',
                 default=nd.topKDatafile),
+    make_option('-T', '--testing_data', type=str, action='store',
+                default=nd.defaultdatafile),
     make_option('-w', '--windowsize', type=int, action='store', default=7),
     make_option('-N', '--accuracy_interval', type=int,
                 default=100, action='store',
                 help="print accuracy measurements after "+ 
-                "so many training iterations"),
+                "so many training iterations. Default 100"),
     make_option('-p', '--passes', type=int,
                 default=1000, action='store', dest='npasses',
-                help="number of passes through the dataset to train"),
+                help="number of passes through the dataset to train. "+
+                "Default 1000"),
     make_option('-s', '--save_to', default=None, action='store', 
                 help="Where to save the trained network"),
     make_option('-L', '--load_from', default=None, action='store', 
@@ -59,40 +64,20 @@ def build_that_network(opts, networkshape):
     if opts.load:
         with open(opts.load, 'rb') as pickle_file:
             params = pickle.load(pickle_file)
-        (inlayer, hiddenlayer, outlayer, biasunit,
-         in2hidden, hidden2out, bias2hidden, bias2out) = params
     else:
-        inlayer = LinearLayer(networkshape[0], name='in')
-        hiddenlayer = SigmoidLayer(networkshape[1], name='hidden')
-        outlayer = SigmoidLayer(networkshape[2], name='out')
-        biasunit = BiasUnit(name='bias')
+        params = nettalk_modules.buildModules(
+            inputs  = len(nd.letterToPos)*opts.windowsize,
+            hidden  = opts.nhidden,
+            outputs = nd.NUMOUTPUTS
+            )
 
-        in2hidden = FullConnection(inlayer, hiddenlayer)
-        hidden2out = FullConnection(hiddenlayer, outlayer)
-        bias2hidden = FullConnection(biasunit, hiddenlayer)
-        bias2out = FullConnection(biasunit, outlayer)
-
-        params = (inlayer, hiddenlayer, outlayer, biasunit,
-                  in2hidden, hidden2out, bias2hidden, bias2out) 
-
-    that_network = FeedForwardNetwork()
-    that_network.addInputModule(inlayer)
-    that_network.addModule(hiddenlayer)
-    that_network.addOutputModule(outlayer)
-    that_network.addModule(biasunit)
-    that_network.addConnection(in2hidden)
-    that_network.addConnection(hidden2out)
-    that_network.addConnection(bias2hidden)
-    that_network.addConnection(bias2out)
-    that_network.sortModules()
-
-    return that_network, params
+    return nettalk_modules.buildnet(params), params
 
 
-def datastreams(opts):
+def datastreams(windowsize, file_str):
     input_entries, output_entries, debug_entries = tee(
-        nd.dictionary(datafile=opts.training_data), 3) 
-    inputstream = nd.binarystream(windowsize=opts.windowsize,
+        nd.dictionary(datafile=file_str), 3) 
+    inputstream = nd.binarystream(windowsize=windowsize,
                                   input_entries=input_entries)
     outputstream = iter(nd.outputUnits(e) for e in output_entries)
 
@@ -100,18 +85,19 @@ def datastreams(opts):
 
 
 def generate_datasets(opts, networkshape):
-    inputstream, outputstream, debug_entries = datastreams(opts)
+    inputstream, outputstream, debug_entries = datastreams(opts.windowsize,
+                                                           opts.training_data)
 
     for     target,       input_vectors, entry in izip(
             outputstream, inputstream,   debug_entries):
-        logging.debug("Generating dataset for %s", entry)
         dataset = SupervisedDataSet(networkshape[0], networkshape[-1])
         for i, input_vector in enumerate(input_vectors):
             dataset.addSample(input_vector, target[i])
         yield dataset
 
 def hits_and_misses(opts, network):
-    inputstream, _, raw_entries = datastreams(opts)
+    inputstream, _, raw_entries = datastreams(opts.windowsize, 
+                                              opts.testing_data)
 
     for input_bin, entry in izip(inputstream, raw_entries):
         for     letter_bin, phoneme,        stress in zip(
@@ -125,13 +111,13 @@ def hits_and_misses(opts, network):
                   bool(guessed_phoneme == phoneme)
             
 
-def calculate_accuracy(opts, network):
+def calculate_accuracy(idx, opts, network):
     logging.debug("Calculating accuracy")
     stress_hits, phoneme_hits = zip( *hits_and_misses(opts, network) )
     stress_accuracy = np.mean(stress_hits)
     phoneme_accuracy = np.mean(phoneme_hits)
     logging.debug("Accuracy calculation complete")
-    return stress_accuracy, phoneme_accuracy
+    return idx, stress_accuracy, phoneme_accuracy
 
 
 def main():
@@ -157,10 +143,14 @@ def main():
         batchlearning=True, 
         weightdecay=0.0
     )
+
+    accuracy_results = list()
+    workers = multiprocessing.Pool(3)
     if opts.accuracy_interval:
         logging.debug("Determining base accuracy")
-        s_accuracy, p_accuracy = calculate_accuracy(opts, network)
-        print '%d\t%.3f\t%.3f' %(0, s_accuracy, p_accuracy)
+        res = workers.apply_async( calculate_accuracy,
+                                   (0, opts, network) )
+        accuracy_results.append(res)
 
     i = 0
     for pass_number in range(1, opts.npasses+1):
@@ -175,13 +165,19 @@ def main():
             logging.debug("Trained to err %f", err)
             
             if opts.accuracy_interval and i % opts.accuracy_interval == 0:
-                s_accuracy, p_accuracy = calculate_accuracy(opts, network)
-                print '%d\t%.3f\t%.3f' %(i, s_accuracy, p_accuracy)
+                res = workers.apply_async( calculate_accuracy,
+                                           (i, opts, network) )
+                accuracy_results.append(res)
     
     if opts.save_to:
         with open(opts.save_to, 'wb') as save_file:
             pickle.dump(to_save, save_file)
 
+    logging.debug("Printing accuracy results")
+    accuracy_results = sorted([ r.get() for r in accuracy_results ])
+    for res in accuracy_results:
+        print "%i\t%.3f\t%.3f" %res
+    
 
 if __name__ == '__main__':
     ret = main()

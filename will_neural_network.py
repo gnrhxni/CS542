@@ -125,4 +125,5 @@ def main():
   for i in experiment:
      print i;
 
-main()
+if __name__ == '__main__':
+   main()

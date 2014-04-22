@@ -90,7 +90,6 @@ def generate_datasets(opts, networkshape):
 
     for     target,       input_vectors, entry in izip(
             outputstream, inputstream,   debug_entries):
-        logging.debug("Generating dataset for %s", entry)
         dataset = SupervisedDataSet(networkshape[0], networkshape[-1])
         for i, input_vector in enumerate(input_vectors):
             dataset.addSample(input_vector, target[i])

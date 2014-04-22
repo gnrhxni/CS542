@@ -16,12 +16,12 @@ from pybrain.structure.modules import SigmoidLayer, LinearLayer, BiasUnit
 from pybrain.structure.networks.feedforward import FeedForwardNetwork
 from pybrain.structure import FullConnection
 from pybrain.datasets import SupervisedDataSet
-from pybrain.supervised.trainers import BackpropTrainer
 
 import numpy as np
 
 import nettalk_data as nd
 import nettalk_modules
+from weight_decay import WeightDecayTrainer
 
 
 HELP="""Runs the network described in the Sejnowski paper and computes its
@@ -29,17 +29,24 @@ accuracy.  Accuracy results are printed to stdout """
 
 
 OPTIONS = [
-    make_option('-n', '--hidden_layers', type=int, action='store', 
-                dest='nhidden', help="the number of hidden units to use",
-                default=80),
     make_option('-l', '--logging', type=str, action='store',
                 default='INFO', 
                 help="set logging verbosity: DEBUG INFO WARN ERROR, CRITICAL"),
+
     make_option('-t', '--training_data', type=str, action='store',
                 default=nd.topKDatafile),
     make_option('-T', '--testing_data', type=str, action='store',
                 default=nd.defaultdatafile),
+
+    make_option('-n', '--hidden_layers', type=int, action='store', 
+                dest='nhidden', help="the number of hidden units to use",
+                default=80),
     make_option('-w', '--windowsize', type=int, action='store', default=7),
+    make_option('-b', '--sparsepenalty', type=float, action='store', default=0),
+    make_option('-a', '--avgactivation', type=float, action='store', 
+                default=0.5),
+    make_option('-W', '--weightdecay', type=float, action='store', default=0),
+    
     make_option('-N', '--accuracy_interval', type=int,
                 default=100, action='store',
                 help="print accuracy measurements after "+ 
@@ -48,6 +55,7 @@ OPTIONS = [
                 default=1000, action='store', dest='npasses',
                 help="number of passes through the dataset to train. "+
                 "Default 1000"),
+
     make_option('-s', '--save_to', default=None, action='store', 
                 help="Where to save the trained network"),
     make_option('-L', '--load_from', default=None, action='store', 
@@ -68,7 +76,9 @@ def build_that_network(opts, networkshape):
         params = nettalk_modules.buildModules(
             inputs  = len(nd.letterToPos)*opts.windowsize,
             hidden  = opts.nhidden,
-            outputs = nd.NUMOUTPUTS
+            outputs = nd.NUMOUTPUTS,
+            beta    = opts.sparsepenalty,
+            sparsity = opts.avgactivation
             )
 
     return nettalk_modules.buildnet(params), params
@@ -136,12 +146,12 @@ def main():
     logging.debug("Constructing network of shape %s", networkshape)
     network, to_save = build_that_network(opts, networkshape)
     logging.debug("Instantiating trainer")
-    trainer = BackpropTrainer(
+    trainer = WeightDecayTrainer(
         network, 
         dataset=None, 
         learningrate=1.0,
-        batchlearning=True, 
-        weightdecay=0.0
+        batchlearning=True,
+        weightdecay=opts.weightdecay
     )
 
     accuracy_results = list()

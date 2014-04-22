@@ -110,4 +110,5 @@ def main():
         print("time to train ", trained - start, " to test ", tested - trained)
         
 
-main()
+if __name__ == '__main__':
+   main()

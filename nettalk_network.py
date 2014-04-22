@@ -148,8 +148,8 @@ def main():
     workers = multiprocessing.Pool(3)
     if opts.accuracy_interval:
         logging.debug("Determining base accuracy")
-        res = workers.apply_async( (0, opts, network), 
-                                   calculate_accuracy )
+        res = workers.apply_async( calculate_accuracy,
+                                   (0, opts, network) )
         accuracy_results.append(res)
 
     i = 0
@@ -165,15 +165,15 @@ def main():
             logging.debug("Trained to err %f", err)
             
             if opts.accuracy_interval and i % opts.accuracy_interval == 0:
-                res = workers.apply_async( (i, opts, network), 
-                                           calculate_accuracy )
+                res = workers.apply_async( calculate_accuracy,
+                                           (i, opts, network) )
                 accuracy_results.append(res)
     
     if opts.save_to:
         with open(opts.save_to, 'wb') as save_file:
             pickle.dump(to_save, save_file)
 
-    log.debug("Printing accuracy results")
+    logging.debug("Printing accuracy results")
     accuracy_results = sorted([ r.get() for r in accuracy_results ])
     for res in accuracy_results:
         print "%i\t%.3f\t%.3f" %res

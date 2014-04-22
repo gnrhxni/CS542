@@ -7,6 +7,7 @@ logging.basicConfig(
     format=r"[%(levelname)s %(created)f]: %(message)s"
 )
 
+import multiprocessing
 import cPickle as pickle
 from itertools import izip, tee
 from optparse import make_option, OptionParser
@@ -110,13 +111,13 @@ def hits_and_misses(opts, network):
                   bool(guessed_phoneme == phoneme)
             
 
-def calculate_accuracy(opts, network):
+def calculate_accuracy(idx, opts, network):
     logging.debug("Calculating accuracy")
     stress_hits, phoneme_hits = zip( *hits_and_misses(opts, network) )
     stress_accuracy = np.mean(stress_hits)
     phoneme_accuracy = np.mean(phoneme_hits)
     logging.debug("Accuracy calculation complete")
-    return stress_accuracy, phoneme_accuracy
+    return idx, stress_accuracy, phoneme_accuracy
 
 
 def main():
@@ -142,10 +143,14 @@ def main():
         batchlearning=True, 
         weightdecay=0.0
     )
+
+    accuracy_results = list()
+    workers = multiprocessing.Pool(3)
     if opts.accuracy_interval:
         logging.debug("Determining base accuracy")
-        s_accuracy, p_accuracy = calculate_accuracy(opts, network)
-        print '%d\t%.3f\t%.3f' %(0, s_accuracy, p_accuracy)
+        res = workers.apply_async( (0, opts, network), 
+                                   calculate_accuracy )
+        accuracy_results.append(res)
 
     i = 0
     for pass_number in range(1, opts.npasses+1):
@@ -160,13 +165,19 @@ def main():
             logging.debug("Trained to err %f", err)
             
             if opts.accuracy_interval and i % opts.accuracy_interval == 0:
-                s_accuracy, p_accuracy = calculate_accuracy(opts, network)
-                print '%d\t%.3f\t%.3f' %(i, s_accuracy, p_accuracy)
+                res = workers.apply_async( (i, opts, network), 
+                                           calculate_accuracy )
+                accuracy_results.append(res)
     
     if opts.save_to:
         with open(opts.save_to, 'wb') as save_file:
             pickle.dump(to_save, save_file)
 
+    log.debug("Printing accuracy results")
+    accuracy_results = sorted([ r.get() for r in accuracy_results ])
+    for res in accuracy_results:
+        print "%i\t%.3f\t%.3f" %res
+    
 
 if __name__ == '__main__':
     ret = main()

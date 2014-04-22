@@ -20,6 +20,7 @@ from pybrain.supervised.trainers import BackpropTrainer
 import numpy as np
 
 import nettalk_data as nd
+import nettalk_modules
 
 
 HELP="""Runs the network described in the Sejnowski paper and computes its
@@ -35,6 +36,8 @@ OPTIONS = [
                 help="set logging verbosity: DEBUG INFO WARN ERROR, CRITICAL"),
     make_option('-t', '--training_data', type=str, action='store',
                 default=nd.topKDatafile),
+    make_option('-T', '--testing_data', type=str, action='store',
+                default=nd.defaultdatafile),
     make_option('-w', '--windowsize', type=int, action='store', default=7),
     make_option('-N', '--accuracy_interval', type=int,
                 default=100, action='store',
@@ -59,40 +62,20 @@ def build_that_network(opts, networkshape):
     if opts.load:
         with open(opts.load, 'rb') as pickle_file:
             params = pickle.load(pickle_file)
-        (inlayer, hiddenlayer, outlayer, biasunit,
-         in2hidden, hidden2out, bias2hidden, bias2out) = params
     else:
-        inlayer = LinearLayer(networkshape[0], name='in')
-        hiddenlayer = SigmoidLayer(networkshape[1], name='hidden')
-        outlayer = SigmoidLayer(networkshape[2], name='out')
-        biasunit = BiasUnit(name='bias')
+        params = nettalk_modules.buildModules(
+            inputs  = len(nd.letterToPos)*opts.windowsize,
+            hidden  = opts.nhidden,
+            outputs = nd.NUMOUTPUTS
+            )
 
-        in2hidden = FullConnection(inlayer, hiddenlayer)
-        hidden2out = FullConnection(hiddenlayer, outlayer)
-        bias2hidden = FullConnection(biasunit, hiddenlayer)
-        bias2out = FullConnection(biasunit, outlayer)
-
-        params = (inlayer, hiddenlayer, outlayer, biasunit,
-                  in2hidden, hidden2out, bias2hidden, bias2out) 
-
-    that_network = FeedForwardNetwork()
-    that_network.addInputModule(inlayer)
-    that_network.addModule(hiddenlayer)
-    that_network.addOutputModule(outlayer)
-    that_network.addModule(biasunit)
-    that_network.addConnection(in2hidden)
-    that_network.addConnection(hidden2out)
-    that_network.addConnection(bias2hidden)
-    that_network.addConnection(bias2out)
-    that_network.sortModules()
-
-    return that_network, params
+    return nettalk_modules.buildnet(params), params
 
 
-def datastreams(opts):
+def datastreams(windowsize, file_str):
     input_entries, output_entries, debug_entries = tee(
-        nd.dictionary(datafile=opts.training_data), 3) 
-    inputstream = nd.binarystream(windowsize=opts.windowsize,
+        nd.dictionary(datafile=file_str), 3) 
+    inputstream = nd.binarystream(windowsize=windowsize,
                                   input_entries=input_entries)
     outputstream = iter(nd.outputUnits(e) for e in output_entries)
 
@@ -100,7 +83,8 @@ def datastreams(opts):
 
 
 def generate_datasets(opts, networkshape):
-    inputstream, outputstream, debug_entries = datastreams(opts)
+    inputstream, outputstream, debug_entries = datastreams(opts.windowsize,
+                                                           opts.training_data)
 
     for     target,       input_vectors, entry in izip(
             outputstream, inputstream,   debug_entries):
@@ -111,7 +95,8 @@ def generate_datasets(opts, networkshape):
         yield dataset
 
 def hits_and_misses(opts, network):
-    inputstream, _, raw_entries = datastreams(opts)
+    inputstream, _, raw_entries = datastreams(opts.windowsize, 
+                                              opts.testing_data)
 
     for input_bin, entry in izip(inputstream, raw_entries):
         for     letter_bin, phoneme,        stress in zip(

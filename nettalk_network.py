@@ -43,10 +43,11 @@ OPTIONS = [
     make_option('-N', '--accuracy_interval', type=int,
                 default=100, action='store',
                 help="print accuracy measurements after "+ 
-                "so many training iterations"),
+                "so many training iterations. Default 100"),
     make_option('-p', '--passes', type=int,
                 default=1000, action='store', dest='npasses',
-                help="number of passes through the dataset to train"),
+                help="number of passes through the dataset to train. "+
+                "Default 1000"),
     make_option('-s', '--save_to', default=None, action='store', 
                 help="Where to save the trained network"),
     make_option('-L', '--load_from', default=None, action='store', 

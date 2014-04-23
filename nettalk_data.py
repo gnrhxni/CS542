@@ -110,12 +110,14 @@ def outputUnits(entry):
             ret[i][MINSTRESS + f] = 1;
     return ret;
 
-def closestByDotProduct(features, compareDict):
+
+
+def closestByDotProductSlow(features, positionalFeatureDict):
 	maxcos = 0;
 	best = '';
-	for k in compareDict.keys():
+	for k in positionalFeatureDict.keys():
 		f = np.zeros(len(features));
-		for on in compareDict[k]: f[on] = 1;
+		for on in positionalFeatureDict[k]: f[on] = 1;
         #Actually, we should also divide below by sqrt(norm(features)), but we don't care because we are just trying to compare across possible fs, and that's a constant. We should save the f vectors and the norms for all the phonemes in some dict so we don't have to recalculate them.
 		cos = np.dot(f,features) / sqrt(np.dot(f,f));
 		#print("%s\n%s %.2f %s" % ((features*10).astype(int), (f*10).astype(int), cos, k));
@@ -124,7 +126,26 @@ def closestByDotProduct(features, compareDict):
 			best = k;
 	return best;
         
-     	
+def closestByDotProduct(features, vectorDict):
+	maxcos = 0;
+	best = '';
+	for k,v in vectorDict.iteritems():
+        #Actually, we should also divide below by sqrt(norm(features)), but we don't care because we are just trying to compare across possible fs, and that's a constant. We should save the f vectors and the norms for all the phonemes in some dict so we don't have to recalculate them.
+		cos = np.dot(v[0],features) / v[1];
+		#print("%s\n%s %.2f %s" % ((features*10).astype(int), (f*10).astype(int), cos, k));
+		if (cos > maxcos):
+			maxcos = cos;
+			best = k;
+	return best;
+        
+def createVectorDict(featureDict, length):
+    v = dict();
+    for k in featureDict.keys():
+        f = np.zeros(length);
+        for on in featureDict[k]: f[on] = 1;
+        norm = sqrt(np.dot(f,f));
+        v[k] = (f, norm);
+    return v;     	
 
 def convertToBinary(words=None):
     for word in words:

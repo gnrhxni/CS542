@@ -101,13 +101,9 @@ def createFeatureTable(filename):
 def outputUnits(entry):
     ret = np.zeros((len(entry.word), NUMOUTPUTS), np.int8)
     for i in range(len(entry.word)):
-        phoneme = entry.phonemes[i];
-        features = articFeatures[phoneme];
-        for f in features: 
-            ret[i][f] = 1;
-        features = stressFeatures[entry.stress[i]];
-        for f in features: 
-            ret[i][MINSTRESS + f] = 1;
+        parray = (articFeatures[entry.phonemes[i]])[0]
+        sarray = stressFeatures[entry.stress[i]][0]
+        ret[i] = np.hstack((parray,sarray))
     return ret;
 
 

@@ -18,6 +18,7 @@ from pybrain.structure import FullConnection
 from pybrain.datasets import SupervisedDataSet
 from sigmoidsparselayer import SigmoidSparseLayer
 from pybrain.tools.shortcuts import buildNetwork
+from prevent_overtraining import PreventOverTrainer
 
 from nettalk_modules import *
 
@@ -106,6 +107,7 @@ def main():
   for beta in (0,0,0.0003,0.0003):
    for r in (0.4, 0.6, 0.8):
     (net, modules) = setup()
+    #trainer = PreventOverTrainer( net, None, learningrate=1.0, verbose=False, batchlearning=True, weightdecay=0.0)
     trainer = BackpropTrainer( net, None, learningrate=1.0, verbose=False, batchlearning=True, weightdecay=0.0)
     modules['hidden'].beta = beta
     modules['hidden'].r = r

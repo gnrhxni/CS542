@@ -148,7 +148,7 @@ def convertToBinary(words=None):
         representation = list()
         word = word.lower()
         for letter in word:
-            for i in range(29):
+            for i in range(len(letterToPos)):
                 if i == letterToPos[letter]:
                     representation.append(1)
                 else:

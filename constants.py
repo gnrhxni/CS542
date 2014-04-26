@@ -401,8 +401,7 @@ letterToPos = {
 'y' : 24,
 'z' : 25,
 ' ' : 26,
-'-' : 27,
-'.': 28}
+}
 
 NUMINPUTS = len(letterToPos) * WINDOWSIZE
 

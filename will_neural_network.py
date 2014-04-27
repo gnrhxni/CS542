@@ -23,11 +23,11 @@ from prevent_overtraining import PreventOverTrainer
 from nettalk_modules import *
 
 
-ITERATIONS = 20
+ITERATIONS = 5
 
-def setup():
+def setup(hidden=80, hidden2=0):
     print("Setting up network")
-    modules = buildModules(NUMINPUTS, 80, NUMOUTPUTS)
+    modules = buildModules(NUMINPUTS, hidden, NUMOUTPUTS, hidden2=hidden2)
     neural_network = buildnet(modules)
 #IMPORTANT: IF YOU WANT TO SET YOUR WEIGHTS TO -0.3 to 0.3, please use the following 4 lines
     newWeights = np.random.uniform(-0.3, 0.3, len(neural_network.params))
@@ -77,11 +77,11 @@ def testWords(neural_network, inputfile):
     return ( 1-np.mean(phoneme_error), 1-np.mean(stress_error))
     
 	  
-def trainNetwork(neural_network, trainer):
-    phoneme_error = list()
-    stress_error = list()
+def trainNetwork(neural_network, trainer, trainfile, testfile, outfile, testSkip=1000):
+    ret = ([], [], [])
     #loop through each word in our data, treating each one as a seperate dataset
-    for word in dictionary('top1000.data'):
+    count = 0
+    for word in dictionary(trainfile):
         output = outputUnits(word)
         ds = SupervisedDataSet(NUMINPUTS, NUMOUTPUTS)
         char_pos = 0
@@ -95,35 +95,36 @@ def trainNetwork(neural_network, trainer):
                 char_pos+= 1
         trainer.setData(ds)
         err = trainer.train()
-        (pherrors, serrors) = testOneWord(neural_network, word, output);
-        phoneme_error.extend(pherrors);
-        stress_error.extend(serrors);
-    print("Accuracy: phoneme %.3f stress %.3f" % ( 1-np.mean(phoneme_error), 1-np.mean(stress_error)) )
-    return ( 1-np.mean(phoneme_error), 1-np.mean(stress_error))
+        count += 1
+        if (0 == count % testSkip):
+            testerror = testWords(neural_network, testfile);
+            ret[0].append(count);
+            ret[1].append(testerror[0]);
+            ret[2].append(testerror[1]);
+            outfile.write("%d %.3f %.3f\n" % (count, testerror[0], testerror[1]))
+            outfile.flush();
+    return ret;
 
-	
 def main():
-  experiment = []
-  for beta in (0,0,0.0003,0.0003):
-   for r in (0.4, 0.6, 0.8):
-    (net, modules) = setup()
-    #trainer = PreventOverTrainer( net, None, learningrate=1.0, verbose=False, batchlearning=True, weightdecay=0.0)
-    trainer = BackpropTrainer( net, None, learningrate=1.0, verbose=False, batchlearning=True, weightdecay=0.0)
+  experiment = [];
+  hidden=80
+  hidden2=0
+  lrate=1.0
+  beta=0
+  r=0.5
+  testSkip=1000
+  for lrate in (0.4,1.0,0.4,1.0):
+   for (train, test) in (("firsthalf.data","secondhalf.data"),("secondhalf.data","firsthalf.data")):
+    (net, modules) = setup(hidden, hidden2)
+    #trainer = PreventOverTrainer( net, None, learningrate=lrate, verbose=False, batchlearning=True, weightdecay=0.0)
+    trainer = BackpropTrainer( net, None, learningrate=lrate, verbose=False, batchlearning=True, weightdecay=0.0)
     modules['hidden'].beta = beta
     modules['hidden'].r = r
-    print ("beta ", beta, " r ", r)
+    fname = 'lrate_%.1f_train_%s_test_%s.%d' % (lrate, train, test, int(time.time()))
+    outfile = open(fname,'w')
     for i in range(ITERATIONS):
-        data = [ beta, r, i ];
-        #start=time.time()
-        trainerror = trainNetwork(net, trainer)
-        data.extend(trainerror)
-        #trained = time.time()
-        if (0==(i+1)%5): 
-            testerror = testWords(net, 'nettalk.data')
-            data.extend(testerror)
-        #tested = time.time()
-        #print("time to train ", trained - start, " to test ", tested - trained)
-        experiment.append(data)
+        trainerror = trainNetwork(net, trainer, train, test, outfile, testSkip)
+        experiment.append(trainerror)
   for i in experiment:
      print i;
 

@@ -23,11 +23,11 @@ from prevent_overtraining import PreventOverTrainer
 from nettalk_modules import *
 
 
-ITERATIONS = 5
+ITERATIONS = 10
 
 def setup(hidden=80, hidden2=0):
     print("Setting up network")
-    modules = buildModules(NUMINPUTS, hidden, NUMOUTPUTS, hidden2=hidden2)
+    modules = buildModules(NUMINPUTS, hidden, NUMOUTPUTS, hidden2=hidden2, forgiving=False)
     neural_network = buildnet(modules)
 #IMPORTANT: IF YOU WANT TO SET YOUR WEIGHTS TO -0.3 to 0.3, please use the following 4 lines
     newWeights = np.random.uniform(-0.3, 0.3, len(neural_network.params))
@@ -80,7 +80,6 @@ def testWords(neural_network, inputfile):
 def trainNetwork(neural_network, trainer, trainfile, testfile, outfile, testSkip=1000):
     ret = ([], [], [])
     #loop through each word in our data, treating each one as a seperate dataset
-    count = 0
     for word in dictionary(trainfile):
         output = outputUnits(word)
         ds = SupervisedDataSet(NUMINPUTS, NUMOUTPUTS)
@@ -95,15 +94,16 @@ def trainNetwork(neural_network, trainer, trainfile, testfile, outfile, testSkip
                 char_pos+= 1
         trainer.setData(ds)
         err = trainer.train()
-        count += 1
-        if (0 == count % testSkip):
+        trainNetwork.counter += 1
+        if (0 == trainNetwork.counter % testSkip):
             testerror = testWords(neural_network, testfile);
-            ret[0].append(count);
+            ret[0].append(trainNetwork.counter);
             ret[1].append(testerror[0]);
             ret[2].append(testerror[1]);
-            outfile.write("%d %.3f %.3f\n" % (count, testerror[0], testerror[1]))
+            outfile.write("%d %.3f %.3f\n" % (trainNetwork.counter, testerror[0], testerror[1]))
             outfile.flush();
     return ret;
+trainNetwork.counter=0
 
 def main():
   experiment = [];
@@ -120,10 +120,10 @@ def main():
     trainer = BackpropTrainer( net, None, learningrate=lrate, verbose=False, batchlearning=True, weightdecay=0.0)
     modules['hidden'].beta = beta
     modules['hidden'].r = r
-    fname = 'lrate_%.1f_train_%s_test_%s.%d' % (lrate, train, test, int(time.time()))
+    fname = 'ph_lrate_%.1f_train_%s_test_%s.%d' % (lrate, train, test, int(time.time()))
     outfile = open(fname,'w')
     for i in range(ITERATIONS):
-        trainerror = trainNetwork(net, trainer, train, test, outfile, testSkip)
+        trainerror = trainNetwork(net, trainer, train, test, outfile, testSkip=testSkip)
         experiment.append(trainerror)
   for i in experiment:
      print i;

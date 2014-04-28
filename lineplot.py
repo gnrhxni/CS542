@@ -38,7 +38,7 @@ def plot(data, xlabel=None, ylabel=None, legend=list(), title=None, save=""):
         args.extend([x, y, symbol])
         
     plt.plot(*args)
-    plt.figure(num=1, figsize=(12,9))
+    plt.figure(num=1, figsize=(20,15))
     if xlabel:
         plt.xlabel(xlabel, fontsize=14)
     if ylabel:
@@ -49,7 +49,7 @@ def plot(data, xlabel=None, ylabel=None, legend=list(), title=None, save=""):
         assert len(aucs) == len(legend)
         legend = [ "%s (%0.2f/%i)" %(l, auc, ideal)
                    for l, auc in zip(legend, aucs) ]
-        plt.legend(legend, loc="best", fontsize=10)
+        plt.legend(legend, loc="best")#, fontsize=10)
     if title:
         plt.title(title)
     plt.grid(True)

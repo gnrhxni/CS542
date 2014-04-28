@@ -1,0 +1,884 @@
+Setting up network
+Setting up trainer
+Generalization: phoneme 0.611 stress 0.748
+Generalization: phoneme 0.670 stress 0.770
+Generalization: phoneme 0.711 stress 0.767
+Generalization: phoneme 0.719 stress 0.758
+Generalization: phoneme 0.777 stress 0.802
+Generalization: phoneme 0.772 stress 0.803
+Generalization: phoneme 0.790 stress 0.804
+Generalization: phoneme 0.792 stress 0.805
+Generalization: phoneme 0.798 stress 0.814
+Generalization: phoneme 0.804 stress 0.805
+Generalization: phoneme 0.826 stress 0.810
+Generalization: phoneme 0.817 stress 0.812
+Generalization: phoneme 0.830 stress 0.810
+Generalization: phoneme 0.839 stress 0.814
+Generalization: phoneme 0.842 stress 0.817
+Generalization: phoneme 0.838 stress 0.815
+Generalization: phoneme 0.846 stress 0.818
+Generalization: phoneme 0.835 stress 0.822
+Generalization: phoneme 0.843 stress 0.826
+Generalization: phoneme 0.840 stress 0.820
+Generalization: phoneme 0.847 stress 0.823
+Generalization: phoneme 0.851 stress 0.824
+Generalization: phoneme 0.849 stress 0.829
+Generalization: phoneme 0.856 stress 0.828
+Generalization: phoneme 0.857 stress 0.830
+Generalization: phoneme 0.854 stress 0.827
+Generalization: phoneme 0.847 stress 0.822
+Generalization: phoneme 0.848 stress 0.821
+Generalization: phoneme 0.853 stress 0.832
+Generalization: phoneme 0.856 stress 0.829
+Generalization: phoneme 0.855 stress 0.825
+Generalization: phoneme 0.855 stress 0.829
+Generalization: phoneme 0.858 stress 0.830
+Generalization: phoneme 0.861 stress 0.836
+Generalization: phoneme 0.862 stress 0.835
+Generalization: phoneme 0.860 stress 0.834
+Generalization: phoneme 0.858 stress 0.831
+Generalization: phoneme 0.854 stress 0.826
+Generalization: phoneme 0.858 stress 0.836
+Generalization: phoneme 0.860 stress 0.831
+Generalization: phoneme 0.858 stress 0.830
+Generalization: phoneme 0.861 stress 0.835
+Generalization: phoneme 0.857 stress 0.830
+Generalization: phoneme 0.864 stress 0.840
+Generalization: phoneme 0.868 stress 0.839
+Generalization: phoneme 0.865 stress 0.838
+Generalization: phoneme 0.862 stress 0.832
+Generalization: phoneme 0.857 stress 0.830
+Generalization: phoneme 0.863 stress 0.838
+Generalization: phoneme 0.864 stress 0.835
+Generalization: phoneme 0.861 stress 0.836
+Generalization: phoneme 0.862 stress 0.837
+Generalization: phoneme 0.858 stress 0.833
+Generalization: phoneme 0.868 stress 0.842
+Generalization: phoneme 0.871 stress 0.839
+Generalization: phoneme 0.865 stress 0.839
+Generalization: phoneme 0.866 stress 0.836
+Generalization: phoneme 0.862 stress 0.828
+Generalization: phoneme 0.865 stress 0.840
+Generalization: phoneme 0.867 stress 0.840
+Generalization: phoneme 0.864 stress 0.837
+Generalization: phoneme 0.862 stress 0.835
+Generalization: phoneme 0.861 stress 0.835
+Generalization: phoneme 0.869 stress 0.842
+Generalization: phoneme 0.873 stress 0.841
+Generalization: phoneme 0.864 stress 0.842
+Generalization: phoneme 0.867 stress 0.838
+Generalization: phoneme 0.864 stress 0.838
+Generalization: phoneme 0.868 stress 0.841
+Generalization: phoneme 0.869 stress 0.840
+Generalization: phoneme 0.864 stress 0.835
+Generalization: phoneme 0.866 stress 0.835
+Generalization: phoneme 0.863 stress 0.838
+Generalization: phoneme 0.871 stress 0.844
+Generalization: phoneme 0.875 stress 0.841
+Generalization: phoneme 0.866 stress 0.845
+Generalization: phoneme 0.870 stress 0.838
+Generalization: phoneme 0.868 stress 0.841
+Generalization: phoneme 0.869 stress 0.843
+Generalization: phoneme 0.865 stress 0.841
+Generalization: phoneme 0.867 stress 0.831
+Generalization: phoneme 0.867 stress 0.838
+Generalization: phoneme 0.864 stress 0.841
+Generalization: phoneme 0.872 stress 0.843
+Generalization: phoneme 0.875 stress 0.842
+Generalization: phoneme 0.867 stress 0.847
+Generalization: phoneme 0.872 stress 0.838
+Generalization: phoneme 0.870 stress 0.842
+Generalization: phoneme 0.868 stress 0.842
+Generalization: phoneme 0.869 stress 0.842
+Generalization: phoneme 0.867 stress 0.836
+Generalization: phoneme 0.871 stress 0.839
+Generalization: phoneme 0.866 stress 0.842
+Generalization: phoneme 0.872 stress 0.845
+Generalization: phoneme 0.874 stress 0.845
+Generalization: phoneme 0.867 stress 0.847
+Generalization: phoneme 0.871 stress 0.837
+Generalization: phoneme 0.869 stress 0.841
+Generalization: phoneme 0.869 stress 0.838
+Generalization: phoneme 0.868 stress 0.839
+Generalization: phoneme 0.869 stress 0.839
+Generalization: phoneme 0.872 stress 0.841
+Generalization: phoneme 0.869 stress 0.842
+Generalization: phoneme 0.873 stress 0.846
+Generalization: phoneme 0.874 stress 0.844
+Generalization: phoneme 0.868 stress 0.848
+Generalization: phoneme 0.873 stress 0.839
+Generalization: phoneme 0.870 stress 0.841
+Generalization: phoneme 0.869 stress 0.837
+Generalization: phoneme 0.871 stress 0.840
+Generalization: phoneme 0.869 stress 0.842
+Generalization: phoneme 0.873 stress 0.840
+Generalization: phoneme 0.871 stress 0.843
+Generalization: phoneme 0.872 stress 0.845
+Generalization: phoneme 0.875 stress 0.844
+Generalization: phoneme 0.868 stress 0.848
+Generalization: phoneme 0.872 stress 0.838
+Generalization: phoneme 0.872 stress 0.841
+Generalization: phoneme 0.870 stress 0.841
+Generalization: phoneme 0.870 stress 0.843
+Generalization: phoneme 0.870 stress 0.843
+Generalization: phoneme 0.875 stress 0.841
+Generalization: phoneme 0.873 stress 0.845
+Generalization: phoneme 0.872 stress 0.847
+Generalization: phoneme 0.873 stress 0.845
+Generalization: phoneme 0.869 stress 0.848
+Generalization: phoneme 0.874 stress 0.837
+Generalization: phoneme 0.872 stress 0.842
+Generalization: phoneme 0.870 stress 0.841
+Generalization: phoneme 0.872 stress 0.840
+Generalization: phoneme 0.871 stress 0.843
+Generalization: phoneme 0.875 stress 0.846
+Generalization: phoneme 0.873 stress 0.847
+Generalization: phoneme 0.872 stress 0.847
+Generalization: phoneme 0.874 stress 0.846
+Generalization: phoneme 0.868 stress 0.847
+Generalization: phoneme 0.874 stress 0.840
+Generalization: phoneme 0.871 stress 0.841
+Generalization: phoneme 0.871 stress 0.839
+Generalization: phoneme 0.873 stress 0.841
+Generalization: phoneme 0.870 stress 0.842
+Generalization: phoneme 0.876 stress 0.844
+Generalization: phoneme 0.872 stress 0.848
+Generalization: phoneme 0.872 stress 0.847
+Generalization: phoneme 0.873 stress 0.847
+Generalization: phoneme 0.868 stress 0.846
+Generalization: phoneme 0.872 stress 0.838
+Generalization: phoneme 0.871 stress 0.842
+Generalization: phoneme 0.871 stress 0.839
+Generalization: phoneme 0.873 stress 0.838
+Generalization: phoneme 0.872 stress 0.843
+Generalization: phoneme 0.875 stress 0.843
+Generalization: phoneme 0.874 stress 0.847
+Generalization: phoneme 0.874 stress 0.848
+Generalization: phoneme 0.872 stress 0.847
+Generalization: phoneme 0.871 stress 0.848
+Generalization: phoneme 0.874 stress 0.839
+Generalization: phoneme 0.870 stress 0.842
+Generalization: phoneme 0.872 stress 0.840
+Generalization: phoneme 0.873 stress 0.842
+Generalization: phoneme 0.873 stress 0.845
+Generalization: phoneme 0.876 stress 0.847
+Generalization: phoneme 0.874 stress 0.848
+Generalization: phoneme 0.875 stress 0.849
+Generalization: phoneme 0.875 stress 0.847
+Generalization: phoneme 0.870 stress 0.848
+Generalization: phoneme 0.873 stress 0.842
+Generalization: phoneme 0.870 stress 0.843
+Generalization: phoneme 0.873 stress 0.841
+Generalization: phoneme 0.874 stress 0.845
+Generalization: phoneme 0.873 stress 0.846
+Generalization: phoneme 0.875 stress 0.846
+Generalization: phoneme 0.874 stress 0.849
+Generalization: phoneme 0.875 stress 0.849
+Generalization: phoneme 0.877 stress 0.845
+Generalization: phoneme 0.874 stress 0.848
+Generalization: phoneme 0.875 stress 0.843
+Generalization: phoneme 0.871 stress 0.844
+Generalization: phoneme 0.873 stress 0.843
+Generalization: phoneme 0.875 stress 0.845
+Generalization: phoneme 0.874 stress 0.844
+Generalization: phoneme 0.876 stress 0.842
+Generalization: phoneme 0.875 stress 0.848
+Generalization: phoneme 0.875 stress 0.849
+Generalization: phoneme 0.877 stress 0.845
+Generalization: phoneme 0.873 stress 0.849
+Generalization: phoneme 0.874 stress 0.844
+Generalization: phoneme 0.872 stress 0.844
+Generalization: phoneme 0.873 stress 0.843
+Generalization: phoneme 0.873 stress 0.843
+Generalization: phoneme 0.873 stress 0.845
+Generalization: phoneme 0.875 stress 0.842
+Generalization: phoneme 0.873 stress 0.848
+Generalization: phoneme 0.875 stress 0.850
+Generalization: phoneme 0.878 stress 0.847
+Generalization: phoneme 0.873 stress 0.849
+Generalization: phoneme 0.874 stress 0.845
+Generalization: phoneme 0.874 stress 0.844
+Generalization: phoneme 0.875 stress 0.843
+Setting up network
+Setting up trainer
+Generalization: phoneme 0.587 stress 0.727
+Generalization: phoneme 0.680 stress 0.762
+Generalization: phoneme 0.708 stress 0.796
+Generalization: phoneme 0.757 stress 0.787
+Generalization: phoneme 0.765 stress 0.800
+Generalization: phoneme 0.765 stress 0.791
+Generalization: phoneme 0.774 stress 0.786
+Generalization: phoneme 0.799 stress 0.807
+Generalization: phoneme 0.802 stress 0.814
+Generalization: phoneme 0.801 stress 0.813
+Generalization: phoneme 0.806 stress 0.791
+Generalization: phoneme 0.824 stress 0.815
+Generalization: phoneme 0.820 stress 0.820
+Generalization: phoneme 0.839 stress 0.823
+Generalization: phoneme 0.834 stress 0.827
+Generalization: phoneme 0.828 stress 0.809
+Generalization: phoneme 0.834 stress 0.823
+Generalization: phoneme 0.839 stress 0.826
+Generalization: phoneme 0.846 stress 0.827
+Generalization: phoneme 0.831 stress 0.834
+Generalization: phoneme 0.841 stress 0.814
+Generalization: phoneme 0.851 stress 0.826
+Generalization: phoneme 0.848 stress 0.831
+Generalization: phoneme 0.854 stress 0.833
+Generalization: phoneme 0.853 stress 0.834
+Generalization: phoneme 0.850 stress 0.827
+Generalization: phoneme 0.848 stress 0.831
+Generalization: phoneme 0.852 stress 0.832
+Generalization: phoneme 0.854 stress 0.834
+Generalization: phoneme 0.842 stress 0.840
+Generalization: phoneme 0.848 stress 0.823
+Generalization: phoneme 0.861 stress 0.836
+Generalization: phoneme 0.856 stress 0.836
+Generalization: phoneme 0.861 stress 0.839
+Generalization: phoneme 0.859 stress 0.839
+Generalization: phoneme 0.855 stress 0.831
+Generalization: phoneme 0.856 stress 0.832
+Generalization: phoneme 0.860 stress 0.840
+Generalization: phoneme 0.859 stress 0.839
+Generalization: phoneme 0.852 stress 0.843
+Generalization: phoneme 0.854 stress 0.826
+Generalization: phoneme 0.862 stress 0.841
+Generalization: phoneme 0.861 stress 0.840
+Generalization: phoneme 0.865 stress 0.840
+Generalization: phoneme 0.860 stress 0.839
+Generalization: phoneme 0.861 stress 0.838
+Generalization: phoneme 0.862 stress 0.839
+Generalization: phoneme 0.864 stress 0.842
+Generalization: phoneme 0.863 stress 0.842
+Generalization: phoneme 0.855 stress 0.845
+Generalization: phoneme 0.858 stress 0.828
+Generalization: phoneme 0.865 stress 0.839
+Generalization: phoneme 0.863 stress 0.842
+Generalization: phoneme 0.867 stress 0.840
+Generalization: phoneme 0.865 stress 0.841
+Generalization: phoneme 0.863 stress 0.834
+Generalization: phoneme 0.863 stress 0.842
+Generalization: phoneme 0.865 stress 0.844
+Generalization: phoneme 0.866 stress 0.843
+Generalization: phoneme 0.858 stress 0.844
+Generalization: phoneme 0.859 stress 0.833
+Generalization: phoneme 0.865 stress 0.840
+Generalization: phoneme 0.864 stress 0.842
+Generalization: phoneme 0.869 stress 0.842
+Generalization: phoneme 0.867 stress 0.846
+Generalization: phoneme 0.866 stress 0.842
+Generalization: phoneme 0.862 stress 0.841
+Generalization: phoneme 0.866 stress 0.846
+Generalization: phoneme 0.866 stress 0.841
+Generalization: phoneme 0.865 stress 0.846
+Generalization: phoneme 0.863 stress 0.836
+Generalization: phoneme 0.868 stress 0.843
+Generalization: phoneme 0.862 stress 0.843
+Generalization: phoneme 0.869 stress 0.846
+Generalization: phoneme 0.868 stress 0.846
+Generalization: phoneme 0.868 stress 0.845
+Generalization: phoneme 0.861 stress 0.836
+Generalization: phoneme 0.868 stress 0.846
+Generalization: phoneme 0.867 stress 0.844
+Generalization: phoneme 0.867 stress 0.848
+Generalization: phoneme 0.865 stress 0.841
+Generalization: phoneme 0.870 stress 0.842
+Generalization: phoneme 0.866 stress 0.845
+Generalization: phoneme 0.868 stress 0.841
+Generalization: phoneme 0.869 stress 0.846
+Generalization: phoneme 0.869 stress 0.847
+Generalization: phoneme 0.863 stress 0.840
+Generalization: phoneme 0.868 stress 0.844
+Generalization: phoneme 0.867 stress 0.844
+Generalization: phoneme 0.869 stress 0.847
+Generalization: phoneme 0.868 stress 0.842
+Generalization: phoneme 0.869 stress 0.845
+Generalization: phoneme 0.868 stress 0.847
+Generalization: phoneme 0.869 stress 0.842
+Generalization: phoneme 0.870 stress 0.847
+Generalization: phoneme 0.870 stress 0.848
+Generalization: phoneme 0.865 stress 0.840
+Generalization: phoneme 0.869 stress 0.847
+Generalization: phoneme 0.866 stress 0.845
+Generalization: phoneme 0.866 stress 0.850
+Generalization: phoneme 0.871 stress 0.843
+Generalization: phoneme 0.870 stress 0.845
+Generalization: phoneme 0.869 stress 0.850
+Generalization: phoneme 0.868 stress 0.847
+Generalization: phoneme 0.870 stress 0.847
+Generalization: phoneme 0.871 stress 0.846
+Generalization: phoneme 0.866 stress 0.835
+Generalization: phoneme 0.870 stress 0.849
+Generalization: phoneme 0.868 stress 0.847
+Generalization: phoneme 0.864 stress 0.846
+Generalization: phoneme 0.870 stress 0.845
+Generalization: phoneme 0.870 stress 0.845
+Generalization: phoneme 0.871 stress 0.849
+Generalization: phoneme 0.869 stress 0.846
+Generalization: phoneme 0.871 stress 0.845
+Generalization: phoneme 0.871 stress 0.848
+Generalization: phoneme 0.867 stress 0.838
+Generalization: phoneme 0.871 stress 0.848
+Generalization: phoneme 0.869 stress 0.847
+Generalization: phoneme 0.864 stress 0.848
+Generalization: phoneme 0.868 stress 0.844
+Generalization: phoneme 0.870 stress 0.845
+Generalization: phoneme 0.872 stress 0.847
+Generalization: phoneme 0.868 stress 0.848
+Generalization: phoneme 0.872 stress 0.848
+Generalization: phoneme 0.872 stress 0.848
+Generalization: phoneme 0.867 stress 0.840
+Generalization: phoneme 0.871 stress 0.848
+Generalization: phoneme 0.870 stress 0.847
+Generalization: phoneme 0.867 stress 0.848
+Generalization: phoneme 0.868 stress 0.846
+Generalization: phoneme 0.870 stress 0.847
+Generalization: phoneme 0.871 stress 0.849
+Generalization: phoneme 0.868 stress 0.847
+Generalization: phoneme 0.871 stress 0.848
+Generalization: phoneme 0.872 stress 0.847
+Generalization: phoneme 0.867 stress 0.843
+Generalization: phoneme 0.871 stress 0.849
+Generalization: phoneme 0.872 stress 0.847
+Generalization: phoneme 0.865 stress 0.848
+Generalization: phoneme 0.870 stress 0.848
+Generalization: phoneme 0.871 stress 0.848
+Generalization: phoneme 0.871 stress 0.850
+Generalization: phoneme 0.865 stress 0.848
+Generalization: phoneme 0.871 stress 0.849
+Generalization: phoneme 0.872 stress 0.848
+Generalization: phoneme 0.868 stress 0.845
+Generalization: phoneme 0.872 stress 0.850
+Generalization: phoneme 0.872 stress 0.848
+Generalization: phoneme 0.865 stress 0.849
+Generalization: phoneme 0.870 stress 0.848
+Generalization: phoneme 0.871 stress 0.848
+Generalization: phoneme 0.870 stress 0.850
+Generalization: phoneme 0.868 stress 0.849
+Generalization: phoneme 0.871 stress 0.849
+Generalization: phoneme 0.872 stress 0.848
+Generalization: phoneme 0.868 stress 0.844
+Generalization: phoneme 0.872 stress 0.851
+Generalization: phoneme 0.872 stress 0.850
+Generalization: phoneme 0.870 stress 0.849
+Generalization: phoneme 0.871 stress 0.848
+Generalization: phoneme 0.871 stress 0.850
+Generalization: phoneme 0.871 stress 0.850
+Generalization: phoneme 0.867 stress 0.850
+Generalization: phoneme 0.869 stress 0.850
+Generalization: phoneme 0.872 stress 0.848
+Generalization: phoneme 0.870 stress 0.846
+Generalization: phoneme 0.873 stress 0.851
+Generalization: phoneme 0.871 stress 0.850
+Generalization: phoneme 0.872 stress 0.850
+Generalization: phoneme 0.870 stress 0.850
+Generalization: phoneme 0.870 stress 0.849
+Generalization: phoneme 0.870 stress 0.850
+Generalization: phoneme 0.866 stress 0.850
+Generalization: phoneme 0.871 stress 0.849
+Generalization: phoneme 0.872 stress 0.850
+Generalization: phoneme 0.870 stress 0.847
+Generalization: phoneme 0.872 stress 0.851
+Generalization: phoneme 0.871 stress 0.850
+Generalization: phoneme 0.873 stress 0.849
+Generalization: phoneme 0.869 stress 0.850
+Generalization: phoneme 0.869 stress 0.849
+Generalization: phoneme 0.870 stress 0.850
+Generalization: phoneme 0.867 stress 0.850
+Generalization: phoneme 0.870 stress 0.849
+Generalization: phoneme 0.873 stress 0.849
+Generalization: phoneme 0.870 stress 0.841
+Generalization: phoneme 0.873 stress 0.851
+Generalization: phoneme 0.872 stress 0.851
+Generalization: phoneme 0.873 stress 0.849
+Generalization: phoneme 0.870 stress 0.851
+Generalization: phoneme 0.871 stress 0.848
+Generalization: phoneme 0.870 stress 0.845
+Generalization: phoneme 0.866 stress 0.849
+Generalization: phoneme 0.871 stress 0.848
+Generalization: phoneme 0.872 stress 0.848
+Generalization: phoneme 0.869 stress 0.838
+Generalization: phoneme 0.873 stress 0.851
+Generalization: phoneme 0.872 stress 0.852
+Setting up network
+Setting up trainer
+Generalization: phoneme 0.504 stress 0.753
+Generalization: phoneme 0.691 stress 0.782
+Generalization: phoneme 0.730 stress 0.778
+Generalization: phoneme 0.752 stress 0.760
+Generalization: phoneme 0.789 stress 0.808
+Generalization: phoneme 0.783 stress 0.799
+Generalization: phoneme 0.800 stress 0.811
+Generalization: phoneme 0.809 stress 0.809
+Generalization: phoneme 0.818 stress 0.817
+Generalization: phoneme 0.811 stress 0.809
+Generalization: phoneme 0.821 stress 0.809
+Generalization: phoneme 0.832 stress 0.818
+Generalization: phoneme 0.829 stress 0.817
+Generalization: phoneme 0.846 stress 0.809
+Generalization: phoneme 0.844 stress 0.826
+Generalization: phoneme 0.842 stress 0.827
+Generalization: phoneme 0.841 stress 0.823
+Generalization: phoneme 0.841 stress 0.819
+Generalization: phoneme 0.846 stress 0.825
+Generalization: phoneme 0.834 stress 0.828
+Generalization: phoneme 0.842 stress 0.827
+Generalization: phoneme 0.851 stress 0.821
+Generalization: phoneme 0.846 stress 0.827
+Generalization: phoneme 0.856 stress 0.828
+Generalization: phoneme 0.856 stress 0.833
+Generalization: phoneme 0.854 stress 0.826
+Generalization: phoneme 0.837 stress 0.830
+Generalization: phoneme 0.852 stress 0.822
+Generalization: phoneme 0.856 stress 0.833
+Generalization: phoneme 0.840 stress 0.834
+Generalization: phoneme 0.848 stress 0.826
+Generalization: phoneme 0.855 stress 0.833
+Generalization: phoneme 0.848 stress 0.834
+Generalization: phoneme 0.861 stress 0.834
+Generalization: phoneme 0.862 stress 0.835
+Generalization: phoneme 0.857 stress 0.833
+Generalization: phoneme 0.855 stress 0.837
+Generalization: phoneme 0.859 stress 0.829
+Generalization: phoneme 0.861 stress 0.837
+Generalization: phoneme 0.858 stress 0.836
+Generalization: phoneme 0.855 stress 0.833
+Generalization: phoneme 0.860 stress 0.833
+Generalization: phoneme 0.844 stress 0.824
+Generalization: phoneme 0.858 stress 0.833
+Generalization: phoneme 0.861 stress 0.827
+Generalization: phoneme 0.866 stress 0.837
+Generalization: phoneme 0.853 stress 0.832
+Generalization: phoneme 0.860 stress 0.834
+Generalization: phoneme 0.865 stress 0.840
+Generalization: phoneme 0.852 stress 0.838
+Generalization: phoneme 0.855 stress 0.834
+Generalization: phoneme 0.860 stress 0.839
+Generalization: phoneme 0.853 stress 0.825
+Generalization: phoneme 0.862 stress 0.839
+Generalization: phoneme 0.864 stress 0.834
+Generalization: phoneme 0.866 stress 0.837
+Generalization: phoneme 0.861 stress 0.836
+Generalization: phoneme 0.864 stress 0.833
+Generalization: phoneme 0.865 stress 0.840
+Generalization: phoneme 0.853 stress 0.841
+Generalization: phoneme 0.859 stress 0.837
+Generalization: phoneme 0.864 stress 0.832
+Generalization: phoneme 0.859 stress 0.831
+Generalization: phoneme 0.867 stress 0.840
+Generalization: phoneme 0.865 stress 0.839
+Generalization: phoneme 0.863 stress 0.842
+Generalization: phoneme 0.861 stress 0.836
+Generalization: phoneme 0.866 stress 0.837
+Generalization: phoneme 0.867 stress 0.842
+Generalization: phoneme 0.853 stress 0.844
+Generalization: phoneme 0.859 stress 0.832
+Generalization: phoneme 0.864 stress 0.832
+Generalization: phoneme 0.863 stress 0.836
+Generalization: phoneme 0.869 stress 0.843
+Generalization: phoneme 0.867 stress 0.840
+Generalization: phoneme 0.867 stress 0.842
+Generalization: phoneme 0.863 stress 0.838
+Generalization: phoneme 0.866 stress 0.838
+Generalization: phoneme 0.868 stress 0.836
+Generalization: phoneme 0.844 stress 0.838
+Generalization: phoneme 0.855 stress 0.833
+Generalization: phoneme 0.865 stress 0.835
+Generalization: phoneme 0.862 stress 0.841
+Generalization: phoneme 0.868 stress 0.840
+Generalization: phoneme 0.868 stress 0.841
+Generalization: phoneme 0.866 stress 0.840
+Generalization: phoneme 0.863 stress 0.837
+Generalization: phoneme 0.868 stress 0.840
+Generalization: phoneme 0.868 stress 0.839
+Generalization: phoneme 0.849 stress 0.839
+Generalization: phoneme 0.862 stress 0.833
+Generalization: phoneme 0.866 stress 0.833
+Generalization: phoneme 0.865 stress 0.841
+Generalization: phoneme 0.866 stress 0.841
+Generalization: phoneme 0.869 stress 0.842
+Generalization: phoneme 0.867 stress 0.843
+Generalization: phoneme 0.863 stress 0.838
+Generalization: phoneme 0.867 stress 0.837
+Generalization: phoneme 0.869 stress 0.836
+Generalization: phoneme 0.860 stress 0.842
+Generalization: phoneme 0.865 stress 0.838
+Generalization: phoneme 0.867 stress 0.835
+Generalization: phoneme 0.865 stress 0.842
+Generalization: phoneme 0.867 stress 0.841
+Generalization: phoneme 0.868 stress 0.841
+Generalization: phoneme 0.867 stress 0.841
+Generalization: phoneme 0.866 stress 0.840
+Generalization: phoneme 0.866 stress 0.842
+Generalization: phoneme 0.870 stress 0.836
+Generalization: phoneme 0.862 stress 0.838
+Generalization: phoneme 0.866 stress 0.837
+Generalization: phoneme 0.866 stress 0.843
+Generalization: phoneme 0.866 stress 0.846
+Generalization: phoneme 0.868 stress 0.841
+Generalization: phoneme 0.868 stress 0.842
+Generalization: phoneme 0.866 stress 0.841
+Generalization: phoneme 0.869 stress 0.839
+Generalization: phoneme 0.868 stress 0.841
+Generalization: phoneme 0.870 stress 0.838
+Generalization: phoneme 0.865 stress 0.844
+Generalization: phoneme 0.869 stress 0.843
+Generalization: phoneme 0.867 stress 0.840
+Generalization: phoneme 0.868 stress 0.843
+Generalization: phoneme 0.868 stress 0.841
+Generalization: phoneme 0.867 stress 0.844
+Generalization: phoneme 0.868 stress 0.842
+Generalization: phoneme 0.867 stress 0.837
+Generalization: phoneme 0.867 stress 0.841
+Generalization: phoneme 0.870 stress 0.843
+Generalization: phoneme 0.866 stress 0.842
+Generalization: phoneme 0.867 stress 0.841
+Generalization: phoneme 0.870 stress 0.844
+Generalization: phoneme 0.868 stress 0.845
+Generalization: phoneme 0.873 stress 0.844
+Generalization: phoneme 0.867 stress 0.844
+Generalization: phoneme 0.868 stress 0.841
+Generalization: phoneme 0.866 stress 0.839
+Generalization: phoneme 0.865 stress 0.838
+Generalization: phoneme 0.872 stress 0.835
+Generalization: phoneme 0.871 stress 0.841
+Generalization: phoneme 0.861 stress 0.843
+Generalization: phoneme 0.869 stress 0.840
+Generalization: phoneme 0.869 stress 0.845
+Generalization: phoneme 0.873 stress 0.845
+Generalization: phoneme 0.870 stress 0.844
+Generalization: phoneme 0.869 stress 0.841
+Generalization: phoneme 0.869 stress 0.838
+Generalization: phoneme 0.867 stress 0.837
+Generalization: phoneme 0.871 stress 0.836
+Generalization: phoneme 0.869 stress 0.845
+Generalization: phoneme 0.865 stress 0.845
+Generalization: phoneme 0.865 stress 0.841
+Generalization: phoneme 0.869 stress 0.844
+Generalization: phoneme 0.874 stress 0.844
+Generalization: phoneme 0.870 stress 0.844
+Generalization: phoneme 0.871 stress 0.842
+Generalization: phoneme 0.867 stress 0.836
+Generalization: phoneme 0.867 stress 0.837
+Generalization: phoneme 0.872 stress 0.840
+Generalization: phoneme 0.863 stress 0.843
+Generalization: phoneme 0.867 stress 0.845
+Generalization: phoneme 0.869 stress 0.845
+Generalization: phoneme 0.870 stress 0.846
+Generalization: phoneme 0.871 stress 0.846
+Generalization: phoneme 0.869 stress 0.845
+Generalization: phoneme 0.870 stress 0.841
+Generalization: phoneme 0.869 stress 0.838
+Generalization: phoneme 0.868 stress 0.841
+Generalization: phoneme 0.873 stress 0.842
+Generalization: phoneme 0.865 stress 0.844
+Generalization: phoneme 0.868 stress 0.843
+Generalization: phoneme 0.867 stress 0.843
+Generalization: phoneme 0.867 stress 0.846
+Generalization: phoneme 0.872 stress 0.848
+Generalization: phoneme 0.867 stress 0.843
+Generalization: phoneme 0.871 stress 0.842
+Generalization: phoneme 0.869 stress 0.840
+Generalization: phoneme 0.870 stress 0.841
+Generalization: phoneme 0.873 stress 0.840
+Generalization: phoneme 0.868 stress 0.845
+Generalization: phoneme 0.868 stress 0.842
+Generalization: phoneme 0.871 stress 0.843
+Generalization: phoneme 0.869 stress 0.845
+Generalization: phoneme 0.874 stress 0.848
+Generalization: phoneme 0.868 stress 0.845
+Generalization: phoneme 0.867 stress 0.845
+Generalization: phoneme 0.869 stress 0.840
+Generalization: phoneme 0.871 stress 0.840
+Generalization: phoneme 0.872 stress 0.843
+Generalization: phoneme 0.866 stress 0.846
+Generalization: phoneme 0.868 stress 0.846
+Generalization: phoneme 0.870 stress 0.844
+Generalization: phoneme 0.869 stress 0.846
+Generalization: phoneme 0.871 stress 0.847
+Generalization: phoneme 0.869 stress 0.844
+Generalization: phoneme 0.871 stress 0.846
+Generalization: phoneme 0.868 stress 0.839
+Generalization: phoneme 0.871 stress 0.841
+Generalization: phoneme 0.874 stress 0.843
+Setting up network
+Setting up trainer
+Generalization: phoneme 0.006 stress 0.044
+Generalization: phoneme 0.160 stress 0.176
+Generalization: phoneme 0.606 stress 0.763
+Generalization: phoneme 0.665 stress 0.771
+Generalization: phoneme 0.744 stress 0.798
+Generalization: phoneme 0.764 stress 0.805
+Generalization: phoneme 0.785 stress 0.783
+Generalization: phoneme 0.796 stress 0.811
+Generalization: phoneme 0.819 stress 0.812
+Generalization: phoneme 0.816 stress 0.815
+Generalization: phoneme 0.814 stress 0.794
+Generalization: phoneme 0.822 stress 0.806
+Generalization: phoneme 0.818 stress 0.819
+Generalization: phoneme 0.836 stress 0.820
+Generalization: phoneme 0.834 stress 0.823
+Generalization: phoneme 0.819 stress 0.805
+Generalization: phoneme 0.831 stress 0.818
+Generalization: phoneme 0.835 stress 0.829
+Generalization: phoneme 0.847 stress 0.826
+Generalization: phoneme 0.835 stress 0.829
+Generalization: phoneme 0.845 stress 0.814
+Generalization: phoneme 0.842 stress 0.826
+Generalization: phoneme 0.841 stress 0.829
+Generalization: phoneme 0.854 stress 0.831
+Generalization: phoneme 0.845 stress 0.835
+Generalization: phoneme 0.838 stress 0.819
+Generalization: phoneme 0.847 stress 0.828
+Generalization: phoneme 0.845 stress 0.834
+Generalization: phoneme 0.849 stress 0.831
+Generalization: phoneme 0.839 stress 0.833
+Generalization: phoneme 0.841 stress 0.816
+Generalization: phoneme 0.851 stress 0.833
+Generalization: phoneme 0.845 stress 0.835
+Generalization: phoneme 0.858 stress 0.830
+Generalization: phoneme 0.855 stress 0.834
+Generalization: phoneme 0.849 stress 0.829
+Generalization: phoneme 0.848 stress 0.826
+Generalization: phoneme 0.853 stress 0.836
+Generalization: phoneme 0.854 stress 0.840
+Generalization: phoneme 0.841 stress 0.829
+Generalization: phoneme 0.849 stress 0.814
+Generalization: phoneme 0.857 stress 0.839
+Generalization: phoneme 0.848 stress 0.837
+Generalization: phoneme 0.862 stress 0.828
+Generalization: phoneme 0.862 stress 0.840
+Generalization: phoneme 0.855 stress 0.833
+Generalization: phoneme 0.855 stress 0.831
+Generalization: phoneme 0.853 stress 0.839
+Generalization: phoneme 0.854 stress 0.841
+Generalization: phoneme 0.845 stress 0.836
+Generalization: phoneme 0.848 stress 0.813
+Generalization: phoneme 0.860 stress 0.838
+Generalization: phoneme 0.850 stress 0.839
+Generalization: phoneme 0.863 stress 0.835
+Generalization: phoneme 0.861 stress 0.837
+Generalization: phoneme 0.857 stress 0.837
+Generalization: phoneme 0.856 stress 0.832
+Generalization: phoneme 0.854 stress 0.841
+Generalization: phoneme 0.853 stress 0.842
+Generalization: phoneme 0.851 stress 0.839
+Generalization: phoneme 0.849 stress 0.827
+Generalization: phoneme 0.855 stress 0.840
+Generalization: phoneme 0.851 stress 0.839
+Generalization: phoneme 0.864 stress 0.837
+Generalization: phoneme 0.860 stress 0.841
+Generalization: phoneme 0.859 stress 0.839
+Generalization: phoneme 0.855 stress 0.833
+Generalization: phoneme 0.858 stress 0.844
+Generalization: phoneme 0.854 stress 0.840
+Generalization: phoneme 0.857 stress 0.839
+Generalization: phoneme 0.850 stress 0.833
+Generalization: phoneme 0.863 stress 0.840
+Generalization: phoneme 0.853 stress 0.835
+Generalization: phoneme 0.866 stress 0.839
+Generalization: phoneme 0.861 stress 0.840
+Generalization: phoneme 0.861 stress 0.839
+Generalization: phoneme 0.853 stress 0.832
+Generalization: phoneme 0.860 stress 0.842
+Generalization: phoneme 0.854 stress 0.842
+Generalization: phoneme 0.858 stress 0.840
+Generalization: phoneme 0.853 stress 0.839
+Generalization: phoneme 0.863 stress 0.843
+Generalization: phoneme 0.856 stress 0.839
+Generalization: phoneme 0.864 stress 0.840
+Generalization: phoneme 0.862 stress 0.835
+Generalization: phoneme 0.859 stress 0.842
+Generalization: phoneme 0.852 stress 0.837
+Generalization: phoneme 0.859 stress 0.841
+Generalization: phoneme 0.857 stress 0.843
+Generalization: phoneme 0.860 stress 0.839
+Generalization: phoneme 0.853 stress 0.838
+Generalization: phoneme 0.859 stress 0.847
+Generalization: phoneme 0.862 stress 0.841
+Generalization: phoneme 0.861 stress 0.840
+Generalization: phoneme 0.862 stress 0.838
+Generalization: phoneme 0.861 stress 0.843
+Generalization: phoneme 0.857 stress 0.841
+Generalization: phoneme 0.862 stress 0.840
+Generalization: phoneme 0.862 stress 0.844
+Generalization: phoneme 0.859 stress 0.844
+Generalization: phoneme 0.859 stress 0.841
+Generalization: phoneme 0.862 stress 0.846
+Generalization: phoneme 0.863 stress 0.845
+Generalization: phoneme 0.863 stress 0.844
+Generalization: phoneme 0.866 stress 0.839
+Generalization: phoneme 0.863 stress 0.845
+Generalization: phoneme 0.857 stress 0.834
+Generalization: phoneme 0.864 stress 0.844
+Generalization: phoneme 0.861 stress 0.844
+Generalization: phoneme 0.865 stress 0.843
+Generalization: phoneme 0.857 stress 0.841
+Generalization: phoneme 0.864 stress 0.847
+Generalization: phoneme 0.865 stress 0.845
+Generalization: phoneme 0.863 stress 0.843
+Generalization: phoneme 0.864 stress 0.839
+Generalization: phoneme 0.865 stress 0.845
+Generalization: phoneme 0.859 stress 0.839
+Generalization: phoneme 0.867 stress 0.844
+Generalization: phoneme 0.863 stress 0.845
+Generalization: phoneme 0.865 stress 0.845
+Generalization: phoneme 0.859 stress 0.841
+Generalization: phoneme 0.864 stress 0.846
+Generalization: phoneme 0.864 stress 0.846
+Generalization: phoneme 0.864 stress 0.843
+Generalization: phoneme 0.865 stress 0.839
+Generalization: phoneme 0.865 stress 0.844
+Generalization: phoneme 0.858 stress 0.843
+Generalization: phoneme 0.866 stress 0.845
+Generalization: phoneme 0.866 stress 0.845
+Generalization: phoneme 0.862 stress 0.843
+Generalization: phoneme 0.859 stress 0.844
+Generalization: phoneme 0.864 stress 0.845
+Generalization: phoneme 0.867 stress 0.848
+Generalization: phoneme 0.864 stress 0.846
+Generalization: phoneme 0.866 stress 0.840
+Generalization: phoneme 0.864 stress 0.844
+Generalization: phoneme 0.861 stress 0.843
+Generalization: phoneme 0.866 stress 0.847
+Generalization: phoneme 0.863 stress 0.845
+Generalization: phoneme 0.858 stress 0.842
+Generalization: phoneme 0.860 stress 0.845
+Generalization: phoneme 0.864 stress 0.843
+Generalization: phoneme 0.867 stress 0.847
+Generalization: phoneme 0.862 stress 0.846
+Generalization: phoneme 0.864 stress 0.838
+Generalization: phoneme 0.866 stress 0.843
+Generalization: phoneme 0.860 stress 0.844
+Generalization: phoneme 0.867 stress 0.845
+Generalization: phoneme 0.864 stress 0.846
+Generalization: phoneme 0.858 stress 0.843
+Generalization: phoneme 0.857 stress 0.844
+Generalization: phoneme 0.864 stress 0.845
+Generalization: phoneme 0.868 stress 0.848
+Generalization: phoneme 0.863 stress 0.848
+Generalization: phoneme 0.865 stress 0.837
+Generalization: phoneme 0.866 stress 0.844
+Generalization: phoneme 0.862 stress 0.843
+Generalization: phoneme 0.867 stress 0.846
+Generalization: phoneme 0.865 stress 0.846
+Generalization: phoneme 0.860 stress 0.847
+Generalization: phoneme 0.864 stress 0.846
+Generalization: phoneme 0.865 stress 0.845
+Generalization: phoneme 0.865 stress 0.848
+Generalization: phoneme 0.862 stress 0.846
+Generalization: phoneme 0.865 stress 0.840
+Generalization: phoneme 0.865 stress 0.845
+Generalization: phoneme 0.864 stress 0.837
+Generalization: phoneme 0.868 stress 0.847
+Generalization: phoneme 0.865 stress 0.847
+Generalization: phoneme 0.865 stress 0.847
+Generalization: phoneme 0.862 stress 0.846
+Generalization: phoneme 0.865 stress 0.843
+Generalization: phoneme 0.867 stress 0.849
+Generalization: phoneme 0.861 stress 0.847
+Generalization: phoneme 0.867 stress 0.842
+Generalization: phoneme 0.866 stress 0.845
+Generalization: phoneme 0.863 stress 0.839
+Generalization: phoneme 0.867 stress 0.846
+Generalization: phoneme 0.863 stress 0.847
+Generalization: phoneme 0.866 stress 0.846
+Generalization: phoneme 0.862 stress 0.844
+Generalization: phoneme 0.866 stress 0.845
+Generalization: phoneme 0.866 stress 0.850
+Generalization: phoneme 0.862 stress 0.846
+Generalization: phoneme 0.867 stress 0.843
+Generalization: phoneme 0.867 stress 0.847
+Generalization: phoneme 0.863 stress 0.841
+Generalization: phoneme 0.868 stress 0.845
+Generalization: phoneme 0.866 stress 0.848
+Generalization: phoneme 0.865 stress 0.848
+Generalization: phoneme 0.863 stress 0.846
+Generalization: phoneme 0.866 stress 0.842
+Generalization: phoneme 0.865 stress 0.846
+Generalization: phoneme 0.861 stress 0.848
+Generalization: phoneme 0.867 stress 0.844
+Generalization: phoneme 0.865 stress 0.848
+Generalization: phoneme 0.862 stress 0.838
+Generalization: phoneme 0.868 stress 0.847
+Generalization: phoneme 0.866 stress 0.848
+([1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000], [0.61129590751697249, 0.66952040788505052, 0.71062246094282522, 0.71902009433705039, 0.7768356190528124, 0.77203697139896943, 0.79025002044878256, 0.79191318810153499, 0.79777517245140006], [0.74816642582544923, 0.7701965809635466, 0.76740191400605284, 0.75837718461160941, 0.80183766393107403, 0.8026965128009379, 0.80431878288845871, 0.80508220410611553, 0.81356163263080405])
+([10000, 11000, 12000, 13000, 14000, 15000, 16000, 17000, 18000, 19000], [0.80430515036671479, 0.82632167298306847, 0.81711972080595463, 0.82957984567985388, 0.83886359298743085, 0.84227172342339884, 0.83846824985685853, 0.84555716116367208, 0.83523734220356083, 0.84315783733675054], [0.80546391471494394, 0.80985358671647079, 0.81173487471712513, 0.81009897210786053, 0.81397060828312018, 0.81698339558851596, 0.81467949941380158, 0.81793767211058699, 0.82171388063363959, 0.82611718515691035])
+([20000, 21000, 22000, 23000, 24000, 25000, 26000, 27000, 28000, 29000], [0.84018594759658638, 0.84747934672955805, 0.85050576655669763, 0.84938789977370011, 0.8561905281238924, 0.85700847942852465, 0.85429560760149414, 0.84728849142514384, 0.84765656951222834, 0.8533276985576792], [0.82017340567658203, 0.82276358480791778, 0.82382692150393977, 0.82853014150557569, 0.82767129263571171, 0.82993429124519458, 0.82734411211385883, 0.82180930828584675, 0.82127763993783565, 0.83185647681108055])
+([30000, 31000, 32000, 33000, 34000, 35000, 36000, 37000, 38000, 39000], [0.85614963055866078, 0.85516808899310193, 0.8551271914278703, 0.85789459334187634, 0.86141178395179541, 0.86232516290863481, 0.86003489925566434, 0.85764920795048671, 0.85420017994928699, 0.85778553316792538], [0.82940262289718358, 0.82510837854786379, 0.82885732202742868, 0.83028873681053517, 0.83625978133435119, 0.83549636011669437, 0.83431033072497751, 0.8306977124628514, 0.8256809444611064, 0.8360825585516809])
+([40000, 41000, 42000, 43000, 44000, 45000, 46000, 47000, 48000, 49000], [0.85950323090765335, 0.85764920795048671, 0.86073015786460183, 0.85717206968945114, 0.86374294516999761, 0.86829620743245084, 0.86454726395288595, 0.86169806690841666, 0.85748561768956022, 0.86336123456116909], [0.83110668811516752, 0.8301524115930965, 0.83481473402950079, 0.83028873681053517, 0.83955885159636834, 0.83890449055266236, 0.83801837663931078, 0.8324835728112987, 0.82997518881042609, 0.83792294898710362])
+([50000, 51000, 52000, 53000, 54000, 55000, 56000, 57000, 58000, 59000], [0.86405649317010658, 0.86092101316901604, 0.86220247021294005, 0.85770373803746214, 0.86826894238896313, 0.871268097172615, 0.86499713717043381, 0.8664285519535404, 0.86176622951713611, 0.86486081195299502], [0.83478746898601308, 0.8357281129863402, 0.83676418463887448, 0.83264716307222508, 0.8416582599449246, 0.83923167107451535, 0.83923167107451535, 0.83574174550808411, 0.82797120811407687, 0.83969517681380701])
+([60000, 61000, 62000, 63000, 64000, 65000, 66000, 67000, 68000, 69000], [0.86689205769283206, 0.86355208986558329, 0.86197071734329422, 0.86126182621261282, 0.86851432778035287, 0.87324481282547639, 0.86405649317010658, 0.86698748534503911, 0.86437004117021565, 0.86843253264988962], [0.84011778498786704, 0.83705046759549584, 0.83459661368159876, 0.83529187229053625, 0.84189001281457043, 0.84133107942307173, 0.84184911524933881, 0.83837282220465137, 0.83810017176977403, 0.84112659159691361])
+([70000, 71000, 72000, 73000, 74000, 75000, 76000, 77000, 78000, 79000], [0.86856885786732829, 0.8640973907353382, 0.86555607056193251, 0.86334760203942529, 0.87125446465087109, 0.8746762276085831, 0.86610137143168742, 0.86972762221555744, 0.86798265943234176, 0.86919595386754644], [0.83973607437903863, 0.83461024620334268, 0.83514191455135367, 0.8382364969872127, 0.84352591542383504, 0.84103116394470645, 0.84535267333751396, 0.8375276058565313, 0.84078577855331682, 0.84330779507593312])
+([80000, 81000, 82000, 83000, 84000, 85000, 86000, 87000, 88000, 89000], [0.86460179403986148, 0.86676936499713719, 0.86734193091037981, 0.86398833056138724, 0.87175886795539437, 0.87523516100008181, 0.86735556343212372, 0.8718133980423699, 0.86959129699811877, 0.86754641873653782], [0.84137197698830324, 0.83094309785424114, 0.83846824985685853, 0.84116748916214523, 0.84300787959756796, 0.84239441611909371, 0.84660686533795015, 0.83811380429151783, 0.84152193472748593, 0.84203997055375301])
+([90000, 91000, 92000, 93000, 94000, 95000, 96000, 97000, 98000, 99000], [0.86850069525860896, 0.86708291299724627, 0.87083185647681105, 0.86586961856204159, 0.87154074760749245, 0.87441720969544945, 0.86723287073642885, 0.87137715734656596, 0.86929138151975349, 0.86856885786732829], [0.84184911524933881, 0.83567358289936466, 0.83905444829184506, 0.84220356081467951, 0.8446983122938081, 0.84475284238078363, 0.84707037107724181, 0.83651879924748473, 0.84149466968399811, 0.83838645472639528])
+([100000, 101000, 102000, 103000, 104000, 105000, 106000, 107000, 108000, 109000], [0.86783270169315918, 0.86896420099790062, 0.87175886795539437, 0.86855522534558438, 0.87259045178177064, 0.874144559260572, 0.86762821386700106, 0.87329934291245193, 0.87017749543310519, 0.86886877334569346], [0.83946342394416118, 0.83870000272650436, 0.84119475420563294, 0.84150830220574202, 0.8459525042942444, 0.8437985658587126, 0.84802464759931295, 0.83899991820486952, 0.8407448809880852, 0.83743217820432425])
+([110000, 111000, 112000, 113000, 114000, 115000, 116000, 117000, 118000, 119000], [0.87100907925948146, 0.86919595386754644, 0.87260408430351444, 0.87068189873762847, 0.87170433786841883, 0.87503067317392369, 0.86833710499768246, 0.87237233143386861, 0.87214057856422278, 0.87020476047659301], [0.84036317037925679, 0.84214903072770397, 0.84014505003135476, 0.84288518690187308, 0.84458925211985714, 0.84431660168497968, 0.84791558742536188, 0.83799111159582296, 0.84124928429260848, 0.84114022411865741])
+([120000, 121000, 122000, 123000, 124000, 125000, 126000, 127000, 128000, 129000], [0.8700275376939226, 0.87034108569403168, 0.87455353491288812, 0.87312212012978163, 0.87194972325980857, 0.87343566812989071, 0.86896420099790062, 0.87370831856476805, 0.8716225427379557, 0.87009570030264194], [0.84257163890176401, 0.8427352291626905, 0.8411129590751697, 0.84509365542438042, 0.84655233525097473, 0.84475284238078363, 0.84820187038198325, 0.83721405785642222, 0.84174005507538785, 0.84142650707527877])
+([130000, 131000, 132000, 133000, 134000, 135000, 136000, 137000, 138000, 139000], [0.87188156065108924, 0.87109087438994459, 0.87492161299997273, 0.87299942743408676, 0.87223600621642994, 0.87398096899964561, 0.8676827439539766, 0.87350383073861004, 0.87084548899855496, 0.87114540447692013], [0.84000872481391609, 0.84293971698884862, 0.84555716116367208, 0.84732938899037546, 0.84738391907735089, 0.84606156446819536, 0.84697494342503477, 0.83998145977042837, 0.84108569403168199, 0.83865910516127273])
+([140000, 141000, 142000, 143000, 144000, 145000, 146000, 147000, 148000, 149000], [0.8728903672601358, 0.87015023038961747, 0.87554870900019088, 0.87189519317283315, 0.87164980778144341, 0.87291763230362351, 0.86802355699757339, 0.8723450663903809, 0.87117266952040784, 0.8709000190855305], [0.84082667611854844, 0.84189001281457043, 0.84418027646754101, 0.84754750933827738, 0.84670229299015731, 0.84690678081631543, 0.84629331733784119, 0.83782752133489646, 0.84194454290154597, 0.83934073124846631])
+([150000, 151000, 152000, 153000, 154000, 155000, 156000, 157000, 158000, 159000], [0.87259045178177064, 0.87174523543365057, 0.87505793821741151, 0.87389917386918237, 0.87448537230416878, 0.87244049404258806, 0.87133625978133433, 0.87374921612999978, 0.86974125473730135, 0.87177250047713828], [0.8384273522916269, 0.84306240968454338, 0.84337595768465246, 0.84728849142514384, 0.84840635820814136, 0.84664776290318189, 0.8477656296861793, 0.83891812307440627, 0.84198544046677748, 0.84000872481391609])
+([160000, 161000, 162000, 163000, 164000, 165000, 166000, 167000, 168000, 169000], [0.87336750552117137, 0.87291763230362351, 0.87608037734820188, 0.87358562586907329, 0.87523516100008181, 0.87459443247811985, 0.87047741091147035, 0.87323118030373259, 0.8703956157810071, 0.87304032499931838], [0.84210813316247246, 0.84484827003299068, 0.84659323281620635, 0.84784742481664255, 0.84861084603429937, 0.84657960029446244, 0.8481064427297762, 0.84180821768410719, 0.84333506011942094, 0.84114022411865741])
+([170000, 171000, 172000, 173000, 174000, 175000, 176000, 177000, 178000, 179000], [0.87407639665185266, 0.8727131444774654, 0.87494887804346044, 0.87406276413010875, 0.87534422117403277, 0.87698012378329748, 0.87350383073861004, 0.87458079995637594, 0.87148621752051691, 0.87301305995583056], [0.84513455298961204, 0.84552989612018425, 0.84617062464214632, 0.84856994846906786, 0.84942879733893173, 0.845243613163563, 0.8484745208168607, 0.84283065681489766, 0.8439757886413829, 0.84276249420617821])
+([180000, 181000, 182000, 183000, 184000, 185000, 186000, 187000, 188000, 189000], [0.87488071543474111, 0.87418545682580362, 0.87563050413065413, 0.87452626986940041, 0.87452626986940041, 0.87734820187038198, 0.87304032499931838, 0.87353109578209776, 0.87229053630340547, 0.87287673473839189], [0.84544810098972112, 0.84413937890230939, 0.84221719333642331, 0.84787468986013037, 0.84926520707800535, 0.84528451072879462, 0.84922430951277361, 0.84420754151102873, 0.84442566185893064, 0.84302151211931187])
+([190000, 191000, 192000, 193000, 194000, 195000, 196000, 197000, 198000, 199000], [0.87327207786896421, 0.87338113804291517, 0.87546691386972764, 0.87323118030373259, 0.87456716743463203, 0.87815252065327043, 0.87282220465141647, 0.87425361943452295, 0.87383101126046292, 0.87496251056520435], [0.84283065681489766, 0.84547536603320883, 0.84224445837991113, 0.84821550290372716, 0.84976961038252852, 0.84694767838154705, 0.84937426725195631, 0.84499822777217326, 0.8439894211631267, 0.84287155438012928])
+([1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000], [0.58710609136364256, 0.68030899603536832, 0.7081159143857545, 0.75671330672080006, 0.76509216746822162, 0.76487418084715053, 0.77362089401762968, 0.79881197291516237, 0.80156405400618536], [0.72671289799588545, 0.76224471723048004, 0.79638687175574596, 0.78653660131609426, 0.79992915434815193, 0.79108707203095407, 0.78615512472921978, 0.80714996117113313, 0.81432989550266355])
+([10000, 11000, 12000, 13000, 14000, 15000, 16000, 17000, 18000, 19000], [0.80118257741931087, 0.80577392062562159, 0.82408479679559665, 0.81992942683142822, 0.83874439706263026, 0.83385332225234676, 0.8279268109919754, 0.83373070477799427, 0.83862177958827777, 0.84551560647965229], [0.8130900965953215, 0.7905421054782763, 0.81507922451259551, 0.81997029932287901, 0.8228722462158885, 0.82661889126554855, 0.80934345154566145, 0.82330821945803079, 0.82634640798920966, 0.82664613959318245])
+([20000, 21000, 22000, 23000, 24000, 25000, 26000, 27000, 28000, 29000], [0.83085600621261868, 0.84081526996280598, 0.85097889617024758, 0.84810419760487199, 0.85443943377975173, 0.85260017166446411, 0.84979359391817333, 0.84794070763906859, 0.85223231924140652, 0.85390809139089086], [0.83370345645036037, 0.81435714383029745, 0.82567882396217929, 0.83149634191201516, 0.83300862409569609, 0.83382607392471286, 0.82679600539516884, 0.83081513372116789, 0.83215030177522853, 0.83356721481219087])
+([30000, 31000, 32000, 33000, 34000, 35000, 36000, 37000, 38000, 39000], [0.84190520306816174, 0.84837668088121088, 0.86076104579081458, 0.85595171596343278, 0.86130601234349236, 0.85863567623537107, 0.85497077616861261, 0.85616970258450387, 0.85999809261706561, 0.85896265616697776], [0.83967084020218263, 0.8229267428711563, 0.83608768511832587, 0.83562446354854969, 0.83888063870079976, 0.83851278627774217, 0.83063801959154759, 0.83220479843049633, 0.83997057180615542, 0.83867627624354557])
+([40000, 41000, 42000, 43000, 44000, 45000, 46000, 47000, 48000, 49000], [0.85155111105055925, 0.85430319214158235, 0.86166024060273294, 0.86085641493753318, 0.86542050981620999, 0.86047493835065869, 0.86092453575661798, 0.86183735473235323, 0.86389460346871205, 0.8627637978719056], [0.8429406395182496, 0.82630553549775887, 0.84062453166936879, 0.84027030341012821, 0.8404337933759316, 0.83920761863240645, 0.83800869221651519, 0.83937110859820985, 0.84243654545702262, 0.84213681385304984])
+([50000, 51000, 52000, 53000, 54000, 55000, 56000, 57000, 58000, 59000], [0.85507976947914821, 0.85825419964849659, 0.86469842913391193, 0.86329514026076648, 0.86742326189730101, 0.86456218749574243, 0.86310440196732929, 0.86341775773511897, 0.86450769084047463, 0.86645594626629796], [0.84484802245262203, 0.82770882437090421, 0.83913949781332176, 0.84151010231747025, 0.84017493426340961, 0.84089701494570768, 0.83439828880502454, 0.84167359228327365, 0.84383983433016796, 0.84348560607092737])
+([60000, 61000, 62000, 63000, 64000, 65000, 66000, 67000, 68000, 69000], [0.85757299145764931, 0.85890815951170996, 0.86501178490170161, 0.86384010681344436, 0.86860856414937537, 0.86682379868935544, 0.86578836223926758, 0.86243681794029892, 0.86600634886033867, 0.86648319459393175], [0.84420768675322555, 0.83339010068257058, 0.83975258518508422, 0.84234117631030392, 0.84206869303396503, 0.84554285480728619, 0.84198694805106333, 0.84114224989441277, 0.84551560647965229, 0.84149647815365336])
+([70000, 71000, 72000, 73000, 74000, 75000, 76000, 77000, 78000, 79000], [0.86452131500429164, 0.86329514026076648, 0.8677366176650908, 0.86194634804288883, 0.86874480578754476, 0.86848594667502277, 0.86798185261379579, 0.86093815992043488, 0.86795460428616189, 0.86667393288736905], [0.84589708306652678, 0.8356108393847328, 0.84299513617351729, 0.8428997670267987, 0.84574721726454039, 0.84573359310072349, 0.84484802245262203, 0.83641466504993256, 0.84627855965340126, 0.84394882764070356])
+([80000, 81000, 82000, 83000, 84000, 85000, 86000, 87000, 88000, 89000], [0.86678292619790454, 0.86461668415101023, 0.87042057793702909, 0.86584285889453538, 0.867940980122345, 0.86897641657243285, 0.86889467158953115, 0.86296816032915979, 0.86775024182890781, 0.86659218790446735], [0.84758647937982801, 0.84122399487731436, 0.84198694805106333, 0.84461641166773394, 0.84129211569639917, 0.84581533808362508, 0.84730037193967223, 0.84005231678905701, 0.84411231760650685, 0.84383983433016796])
+([90000, 91000, 92000, 93000, 94000, 95000, 96000, 97000, 98000, 99000], [0.86858131582174147, 0.86848594667502277, 0.86915353070205315, 0.867682121009823, 0.86892191991716505, 0.87009359800542241, 0.86952138312511074, 0.86505265739315251, 0.86911265821060235, 0.86621071131759286], [0.84717775446531973, 0.84213681385304984, 0.84450741835719834, 0.84685077453371305, 0.84160547146418885, 0.84676902955081135, 0.84841755337266178, 0.83979345767653513, 0.84715050613768583, 0.84458916334010004])
+([100000, 101000, 102000, 103000, 104000, 105000, 106000, 107000, 108000, 109000], [0.86644232210248096, 0.87062494039428329, 0.87044782626466299, 0.86893554408098206, 0.86811809425196529, 0.87009359800542241, 0.87123802776604586, 0.86550225479911169, 0.87020259131595801, 0.8678047384841755], [0.84968460060763773, 0.84299513617351729, 0.84532486818621511, 0.84969822477145462, 0.84721862695677053, 0.84731399610348912, 0.84580171391980818, 0.83499775201297022, 0.84870366081281756, 0.84689164702516384])
+([110000, 111000, 112000, 113000, 114000, 115000, 116000, 117000, 118000, 119000], [0.86446681834902384, 0.86957587978037854, 0.87039332960939519, 0.87121077943841196, 0.86904453739151766, 0.87130614858513056, 0.87125165192986276, 0.86683742285317233, 0.87095192032588997, 0.86928977234022264], [0.84641480129157076, 0.84467090832300173, 0.84521587487567951, 0.84883990245098706, 0.84638755296393686, 0.8452294990394964, 0.84802245262197029, 0.83821305467376939, 0.8477635935094483, 0.84651017043828936])
+([120000, 121000, 122000, 123000, 124000, 125000, 126000, 127000, 128000, 129000], [0.86393547596016296, 0.86811809425196529, 0.87046145042848, 0.87170124933582205, 0.8678864834670772, 0.87197373261216093, 0.87208272592269653, 0.86697366449134183, 0.87080205452390358, 0.87028433629885971], [0.8479270834752517, 0.84389433098543576, 0.84514775405659481, 0.84738211692257392, 0.84770909685418061, 0.84757285521601111, 0.84753198272456032, 0.83954822272783014, 0.84830856006212618, 0.84721862695677053])
+([130000, 131000, 132000, 133000, 134000, 135000, 136000, 137000, 138000, 139000], [0.86708265780187743, 0.8678592351394433, 0.87046145042848, 0.87104728947260868, 0.86844507418357197, 0.87142876605948305, 0.87236883336285231, 0.86719165111241292, 0.87088379950680528, 0.87157863186146955], [0.84804970094960419, 0.84608782135996408, 0.84666003624027575, 0.84946661398656653, 0.84664641207645874, 0.84839030504502788, 0.84706876115478413, 0.84255916293137512, 0.84913963405495985, 0.84708238531860114])
+([140000, 141000, 142000, 143000, 144000, 145000, 146000, 147000, 148000, 149000], [0.8654886306352948, 0.86964400059946323, 0.87111541029169337, 0.87108816196405947, 0.86490279159116612, 0.87096554448970698, 0.87217809506941513, 0.86775024182890781, 0.87156500769765255, 0.87235520919903542], [0.84804970094960419, 0.84766822436272971, 0.84760010354364501, 0.84977996975435632, 0.84840392920884478, 0.84896251992533955, 0.8480360767857873, 0.84488889494407282, 0.84990258722870882, 0.847858962656167])
+([150000, 151000, 152000, 153000, 154000, 155000, 156000, 157000, 158000, 159000], [0.8652433956865897, 0.86984836305671742, 0.87066581288573408, 0.8702707121350427, 0.86790010763089409, 0.87108816196405947, 0.87234158503521853, 0.86800910094142969, 0.87232796087140152, 0.87204185343124563], [0.84855379501083117, 0.84768184852654671, 0.84849929835556348, 0.84958923146091903, 0.84860829166609897, 0.84909876156350905, 0.84779084183708231, 0.84443929753811364, 0.85086990285971198, 0.84997070804779362])
+([160000, 161000, 162000, 163000, 164000, 165000, 166000, 167000, 168000, 169000], [0.86978024223763262, 0.87050232291993079, 0.87107453780024247, 0.87137426940421525, 0.86674205370645374, 0.86946688646984294, 0.87225984005231683, 0.86969849725473103, 0.87268218913064211, 0.87142876605948305], [0.84903064074442436, 0.84830856006212618, 0.84980721808199022, 0.85014782217741391, 0.84999795637542741, 0.84952111064183433, 0.8479815801305195, 0.84637392880011986, 0.85119688279131867, 0.84967097644382072])
+([170000, 171000, 172000, 173000, 174000, 175000, 176000, 177000, 178000, 179000], [0.87160588018910334, 0.86975299390999883, 0.87046145042848, 0.86998460469488692, 0.86606084551560647, 0.87054319541138159, 0.87198735677597794, 0.8700799738416054, 0.87240970585430322, 0.87149688687856786], [0.85005245303069521, 0.85013419801359691, 0.84873090914045157, 0.85018869466886471, 0.84963010395236993, 0.84907151323587515, 0.84975272142672242, 0.84672815705936044, 0.85116963446368477, 0.84977996975435632])
+([180000, 181000, 182000, 183000, 184000, 185000, 186000, 187000, 188000, 189000], [0.8727366857859099, 0.86941238981457514, 0.86945326230602593, 0.87044782626466299, 0.86727339609531462, 0.8704069537732122, 0.87311816237278439, 0.87014809466069021, 0.87328165233858779, 0.87172849766345584], [0.84948023815038354, 0.84953473480565134, 0.84908513739969216, 0.84988896306489192, 0.85014782217741391, 0.84855379501083117, 0.84889439910625486, 0.8405019141950163, 0.85070641289390858, 0.85077453371299339])
+([190000, 191000, 192000, 193000, 194000, 195000, 196000, 197000, 198000, 199000], [0.87303641738988269, 0.86968487309091402, 0.87052957124756469, 0.87044782626466299, 0.86608809384324037, 0.87078843036008668, 0.87172849766345584, 0.86913990653823625, 0.87313178653660128, 0.87210997425033043], [0.84875815746808536, 0.85066554040245779, 0.84847205002792947, 0.84490251910788972, 0.84924862736549545, 0.84832218422594319, 0.84832218422594319, 0.83833567214812188, 0.85095164784261368, 0.85204158094796933])
+([1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000], [0.5041442866101371, 0.69142787032745323, 0.7301714971235379, 0.75179267660931925, 0.78945933418763803, 0.78301115140278643, 0.80022902636529702, 0.80945824358589857, 0.81792403958884319], [0.75273332060964637, 0.78198871227199607, 0.77819887122719966, 0.75995855713389859, 0.80764511819396345, 0.79949287019112791, 0.8107805981950541, 0.80869482236824164, 0.81714698584944245])
+([10000, 11000, 12000, 13000, 14000, 15000, 16000, 17000, 18000, 19000], [0.81099871854295613, 0.82092319437249506, 0.83161109141969081, 0.8294435204624151, 0.84592523925075658, 0.84382583090220031, 0.84209450064072855, 0.84137197698830324, 0.84090847124901158, 0.8461433595986585], [0.80928102080322817, 0.80926738828148426, 0.81755596150175858, 0.81665621506666297, 0.8093491834119475, 0.82579000463505736, 0.8265534258527143, 0.82309076532977077, 0.81890558115440193, 0.82540829402622895])
+([20000, 21000, 22000, 23000, 24000, 25000, 26000, 27000, 28000, 29000], [0.83390135507266128, 0.84152193472748593, 0.8508056820350629, 0.84587070916378115, 0.85610873299342916, 0.85614963055866078, 0.85428197507975023, 0.83688687733456935, 0.85182812116585327, 0.85591787768901495], [0.82758949750524846, 0.82720778689642005, 0.8208277667202879, 0.82703056411374976, 0.82779398533140658, 0.83306977124628512, 0.82589906480900832, 0.8303432668975107, 0.82197289854677313, 0.83324699402895552])
+([30000, 31000, 32000, 33000, 34000, 35000, 36000, 37000, 38000, 39000], [0.84049949559669546, 0.8477656296861793, 0.85549526951495491, 0.84827003299070258, 0.86063473021239467, 0.86237969299561035, 0.85729476238514601, 0.8545682580363716, 0.85914878534231265, 0.86063473021239467], [0.83406494533358777, 0.82598085993947157, 0.83257900046350575, 0.83388772255091748, 0.83403768029010006, 0.83526460724704854, 0.83306977124628512, 0.83722769037816613, 0.82937535785369576, 0.83675055211713056])
+([40000, 41000, 42000, 43000, 44000, 45000, 46000, 47000, 48000, 49000], [0.85831720151593638, 0.8553044142105406, 0.85993947160345718, 0.84446655942416227, 0.85789459334187634, 0.86146631403877083, 0.86561060064890805, 0.85272786760094887, 0.86026665212531017, 0.86496987212694609], [0.83585080568203507, 0.83279712081140767, 0.83298797611582187, 0.8240586743735856, 0.83308340376802903, 0.8274668048095537, 0.8366278594214358, 0.83234724759385992, 0.83386045750742976, 0.83998145977042837])
+([50000, 51000, 52000, 53000, 54000, 55000, 56000, 57000, 58000, 59000], [0.85197807890503585, 0.85488180603648067, 0.85989857403822556, 0.85338222864465463, 0.86227063282165939, 0.86397469803964344, 0.86592414864901712, 0.86092101316901604, 0.86397469803964344, 0.86491534203997056], [0.83766393107397008, 0.83354690950732069, 0.83899991820486952, 0.82486299315647404, 0.83946342394416118, 0.83360143959429611, 0.83691414237805706, 0.83589170324726669, 0.83286528342012711, 0.8398587670747335])
+([60000, 61000, 62000, 63000, 64000, 65000, 66000, 67000, 68000, 69000], [0.85255064481827847, 0.85936690569021457, 0.86419281838754536, 0.85914878534231265, 0.86726013577991656, 0.86507893230089705, 0.86282956621315809, 0.86070289282111401, 0.86633312430133325, 0.86743735856258697], [0.84071761594459749, 0.83692777489980097, 0.83155656133271538, 0.83146113368050822, 0.84024047768356191, 0.83850914742209015, 0.84172642255364394, 0.83630067889958282, 0.83685961229108163, 0.84161736237969298])
+([70000, 71000, 72000, 73000, 74000, 75000, 76000, 77000, 78000, 79000], [0.85335496360116692, 0.85878070725522804, 0.86393380047441171, 0.86276140360443876, 0.8694686043024239, 0.86745099108433077, 0.8665921422144669, 0.86270687351746322, 0.86582872099680996, 0.86809171960629272], [0.84352591542383504, 0.8315974588979469, 0.8324972053330425, 0.83638247403004606, 0.84255800638002021, 0.84040406794448841, 0.8418354827275949, 0.83774572620443333, 0.83844098481337082, 0.83638247403004606])
+([80000, 81000, 82000, 83000, 84000, 85000, 86000, 87000, 88000, 89000], [0.84424843907626035, 0.85520898655833355, 0.86471085421381244, 0.86197071734329422, 0.86826894238896313, 0.86817351473675597, 0.86600594377948037, 0.86323854186547422, 0.8675191536930501, 0.86795539438885405], [0.83833192463941986, 0.83294707855059025, 0.83473293889903755, 0.84101753142296265, 0.83999509229217217, 0.8412901818578401, 0.83958611663985605, 0.837350383073861, 0.83959974916159985, 0.83886359298743085])
+([90000, 91000, 92000, 93000, 94000, 95000, 96000, 97000, 98000, 99000], [0.84891076151266465, 0.86218883769119614, 0.86582872099680996, 0.86518799247484801, 0.86644218447528421, 0.86866428551953545, 0.86698748534503911, 0.86315674673501108, 0.86741009351909915, 0.86886877334569346], [0.83857731003080949, 0.83347874689860135, 0.83260626550699346, 0.84138560951004715, 0.84116748916214523, 0.84213539820596017, 0.84318510238023836, 0.83815470185674945, 0.83714589524770289, 0.83557815524715762])
+([100000, 101000, 102000, 103000, 104000, 105000, 106000, 107000, 108000, 109000], [0.85957139351637268, 0.86509256482264085, 0.86746462360607468, 0.86525615508356735, 0.86682389508411273, 0.86814624969326826, 0.8671647081277094, 0.86592414864901712, 0.86608773890994351, 0.8703956157810071], [0.84169915751015623, 0.83815470185674945, 0.83450118602939172, 0.84209450064072855, 0.8413038143795839, 0.84142650707527877, 0.84103116394470645, 0.84024047768356191, 0.84189001281457043, 0.83640973907353389])
+([110000, 111000, 112000, 113000, 114000, 115000, 116000, 117000, 118000, 119000], [0.86169806690841666, 0.86597867873599255, 0.86630585925784553, 0.86634675682307716, 0.86771000899746431, 0.86832347247593855, 0.86604684134471199, 0.86923685143277807, 0.86833710499768246, 0.87020476047659301], [0.83835918968290757, 0.83694140742154488, 0.84266706655397117, 0.84638874499004824, 0.84100389890121874, 0.84206723559724073, 0.84137197698830324, 0.8389453881178941, 0.840758513509829, 0.83766393107397008])
+([120000, 121000, 122000, 123000, 124000, 125000, 126000, 127000, 128000, 129000], [0.86464269160509311, 0.86916868882405862, 0.86708291299724627, 0.86837800256291409, 0.8682416773454753, 0.8671647081277094, 0.86754641873653782, 0.86694658777980749, 0.86700111786678302, 0.87012296534612976], [0.84407121629358994, 0.84265343403222726, 0.83987239959647741, 0.84317146985849445, 0.84054039316192708, 0.84382583090220031, 0.8418354827275949, 0.83740491316083654, 0.84145377211876649, 0.84270796411920279])
+([130000, 131000, 132000, 133000, 134000, 135000, 136000, 137000, 138000, 139000], [0.86616953404040675, 0.8665921422144669, 0.86975488725904515, 0.86754641873653782, 0.87265861439048997, 0.86745099108433077, 0.86807808708454892, 0.86603320882296808, 0.86533795021403059, 0.87244049404258806], [0.84191727785805814, 0.8405676582054149, 0.84363497559778611, 0.84531177577228234, 0.8443302342067236, 0.84411211385882157, 0.8413038143795839, 0.83855004498732177, 0.83833192463941986, 0.83507375194263433])
+([140000, 141000, 142000, 143000, 144000, 145000, 146000, 147000, 148000, 149000], [0.87050467595495817, 0.86096191073424766, 0.86884150830220575, 0.86933227908498512, 0.87286310221664798, 0.87030018812880006, 0.86918232134580253, 0.86851432778035287, 0.86734193091037981, 0.87065463369414076], [0.84145377211876649, 0.84307604220628729, 0.84028137524879354, 0.84461651716334485, 0.84450745698939389, 0.84427570411974806, 0.84138560951004715, 0.83789568394361591, 0.83745944324781196, 0.83646426916050931])
+([150000, 151000, 152000, 153000, 154000, 155000, 156000, 157000, 158000, 159000], [0.86907326117185157, 0.86514709490961639, 0.86548790795321318, 0.86863702047604763, 0.87355836082558547, 0.86975488725904515, 0.87143168743354149, 0.86719197317119723, 0.86653761212749136, 0.87166344030318732], [0.84525724568530691, 0.84456198707636942, 0.84114022411865741, 0.8439894211631267, 0.8436213430760422, 0.84427570411974806, 0.84197180794503368, 0.83595986585598603, 0.83683234724759381, 0.83981786950950188])
+([160000, 161000, 162000, 163000, 164000, 165000, 166000, 167000, 168000, 169000], [0.86284319873490201, 0.86667393734493003, 0.86854159282384058, 0.8698366823895084, 0.87136352482482216, 0.86925048395452187, 0.87013659786787356, 0.86860975543255992, 0.86790086430187863, 0.87259045178177064], [0.84321236742372607, 0.84454835455462551, 0.84471194481555201, 0.84600703438121982, 0.84592523925075658, 0.84471194481555201, 0.84142650707527877, 0.83785478637838429, 0.84092210377075549, 0.8420127055102653])
+([170000, 171000, 172000, 173000, 174000, 175000, 176000, 177000, 178000, 179000], [0.86541974534449384, 0.86811898464978055, 0.86713744308422169, 0.8673282983886359, 0.87205878343375964, 0.86736919595386752, 0.87137715734656596, 0.86854159282384058, 0.87020476047659301, 0.87299942743408676], [0.84419390898928481, 0.84287155438012928, 0.84280339177140984, 0.8459525042942444, 0.8477656296861793, 0.84321236742372607, 0.84220356081467951, 0.83957248411811214, 0.8414674046405104, 0.84011778498786704])
+([180000, 181000, 182000, 183000, 184000, 185000, 186000, 187000, 188000, 189000], [0.8675055211713063, 0.86817351473675597, 0.87114540447692013, 0.8694822368241677, 0.87398096899964561, 0.86821441230198759, 0.86741009351909915, 0.86850069525860896, 0.87119993456389566, 0.87203151839027182], [0.84498459525042946, 0.84167189246666851, 0.84293971698884862, 0.8450527578591488, 0.84802464759931295, 0.84458925211985714, 0.8450663903808926, 0.83995419472694055, 0.83996782724868446, 0.84334869264116474])
+([190000, 191000, 192000, 193000, 194000, 195000, 196000, 197000, 198000, 199000], [0.86606047386645579, 0.86780543664967147, 0.87009570030264194, 0.86900509856313224, 0.87124083212912729, 0.8687460806499987, 0.87102271178122526, 0.86830983995419475, 0.87115903699866404, 0.873612890912561], [0.84552989612018425, 0.84574801646808628, 0.8436213430760422, 0.84627968481609728, 0.8473975515990948, 0.8438121983804564, 0.84551626359844045, 0.83876816533522369, 0.84094936881424331, 0.84311693977151891])
+([1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000], [0.0062126187005272504, 0.16032915979781737, 0.6061662965435497, 0.66526791918146022, 0.74379759942233548, 0.76374337525034397, 0.78514693660676582, 0.79618250929849177, 0.81889399038134036], [0.044292156568890628, 0.17577896156623385, 0.76274881129170691, 0.7705690813226338, 0.79819888554339979, 0.80467036335644904, 0.7832668020000273, 0.81122358615239987, 0.81239526424065722])
+([10000, 11000, 12000, 13000, 14000, 15000, 16000, 17000, 18000, 19000], [0.8155424460823717, 0.81447976130464994, 0.82197305140397003, 0.81776318478453391, 0.83626479924794617, 0.83407130887341796, 0.81900298369187596, 0.83066526791918149, 0.83460265126227884, 0.84653741876592326], [0.81495660703824302, 0.79438411967465494, 0.80569217564271989, 0.81915284949386225, 0.81965694355508933, 0.82311748116459349, 0.805419692366381, 0.81813103720759139, 0.82919385822695135, 0.82597855556615207])
+([20000, 21000, 22000, 23000, 24000, 25000, 26000, 27000, 28000, 29000], [0.83482063788334993, 0.84463003583155083, 0.84210956552541583, 0.84065177999700269, 0.85369010476981977, 0.8454747339882015, 0.83833567214812188, 0.84719137862913663, 0.84498426409079141, 0.84867641248518377], [0.82926197904603605, 0.81393479475197206, 0.82641452880829436, 0.82941184484802244, 0.83077426122971709, 0.8354064769274786, 0.81927546696821485, 0.82765432771563652, 0.83366258395890958, 0.83100587201460507])
+([30000, 31000, 32000, 33000, 34000, 35000, 36000, 37000, 38000, 39000], [0.83881251788171496, 0.84149647815365336, 0.85100614449788148, 0.84502513658224232, 0.85814520633796099, 0.8554476219022058, 0.84915325821877685, 0.8479134593114348, 0.852872654940803, 0.85419419883104675], [0.83329473153585198, 0.81621003010940207, 0.83347184566547228, 0.83492963119388541, 0.8303519121513917, 0.83433016798593984, 0.82856714669137177, 0.82633278382539266, 0.83607406095450898, 0.8402294309186773])
+([40000, 41000, 42000, 43000, 44000, 45000, 46000, 47000, 48000, 49000], [0.84054278668646709, 0.84883990245098706, 0.85705527323260533, 0.8481450700963229, 0.86176923391326854, 0.86164661643891605, 0.85454842709028733, 0.8552432594449515, 0.8527909099579013, 0.85413970217577895], [0.82927560320985294, 0.81442526464938214, 0.83926211528767425, 0.83721849071513232, 0.8280085559748771, 0.84017493426340961, 0.83330835569966899, 0.83107399283368988, 0.83942560525347754, 0.84051553835883319])
+([50000, 51000, 52000, 53000, 54000, 55000, 56000, 57000, 58000, 59000], [0.84514775405659481, 0.84849929835556348, 0.85965748852164192, 0.85046117794520359, 0.862927287837709, 0.86141500565402795, 0.85717789070695782, 0.8555157427212905, 0.85369010476981977, 0.85261379582828101], [0.83608768511832587, 0.81347157318219598, 0.83837654463957278, 0.83879889371789806, 0.8352157386340413, 0.83730023569803402, 0.83725936320658323, 0.83243640921538442, 0.84133298818784996, 0.84194607555961254])
+([60000, 61000, 62000, 63000, 64000, 65000, 66000, 67000, 68000, 69000], [0.85137399692093896, 0.84933037234839714, 0.85460292374555513, 0.85142849357620676, 0.86448044251284073, 0.8603386967124893, 0.85898990449461166, 0.85450755459883654, 0.85843131377811688, 0.85355386313165027], [0.83882614204553196, 0.82682325372280274, 0.83969808852981642, 0.83939835692584364, 0.83670077249008845, 0.84119674654968057, 0.83904412866660305, 0.83348546982928928, 0.84360822354527987, 0.83977983351271812])
+([70000, 71000, 72000, 73000, 74000, 75000, 76000, 77000, 78000, 79000], [0.85732775650894433, 0.84972547309908852, 0.86295453616534279, 0.85254567500919631, 0.86570661725636588, 0.86131963650730936, 0.86123789152440766, 0.85251842668156241, 0.85956211937492333, 0.85422144715868065], [0.83874439706263026, 0.83348546982928928, 0.84040654504829759, 0.8352157386340413, 0.83949372607256234, 0.8402839275739451, 0.83867627624354557, 0.83167345604163545, 0.84243654545702262, 0.84217768634450063])
+([80000, 81000, 82000, 83000, 84000, 85000, 86000, 87000, 88000, 89000], [0.85780460224253741, 0.85275003746645051, 0.86304990531206149, 0.85631956838649026, 0.86443957002138994, 0.86152399896456355, 0.85939862940912004, 0.85217782258613872, 0.85942587773675394, 0.85657842749901225], [0.8402294309186773, 0.83928936361530815, 0.84347198190711048, 0.83896238368370146, 0.84010681344432481, 0.835297483616943, 0.84186433057671084, 0.83724573904276622, 0.84125124320494826, 0.84266815624191072])
+([90000, 91000, 92000, 93000, 94000, 95000, 96000, 97000, 98000, 99000], [0.86012071009141811, 0.85294077575988769, 0.85923513944331664, 0.86166024060273294, 0.86081554244608238, 0.86246406626793282, 0.86093815992043488, 0.85689178326680193, 0.86220520715541082, 0.86153762312838045], [0.83915312197713865, 0.83809043719941689, 0.84710963364623493, 0.84126486736876527, 0.84020218259104351, 0.83814493385468469, 0.84273627706099541, 0.84059728334173489, 0.8403656725568468, 0.84355372689001218])
+([100000, 101000, 102000, 103000, 104000, 105000, 106000, 107000, 108000, 109000], [0.85855393125246937, 0.85926238777095054, 0.86230057630212942, 0.8628182945271734, 0.86250493875938361, 0.8655158789629287, 0.86345863022656988, 0.85656480333519536, 0.86359487186473927, 0.86125151568822467], [0.84358097521764597, 0.84146922982601946, 0.84636030463630296, 0.84497063992697452, 0.84393520347688655, 0.83870352457117947, 0.84465728415918473, 0.83415305385631955, 0.84375808934726626, 0.84411231760650685])
+([110000, 111000, 112000, 113000, 114000, 115000, 116000, 117000, 118000, 119000], [0.86452131500429164, 0.85712339405169002, 0.86397634845161375, 0.86458943582337633, 0.8628591670186242, 0.86416708674505105, 0.86482104660826442, 0.85881279036499136, 0.86689191950844013, 0.86324064360549868], [0.84340386108802567, 0.84118312238586357, 0.84693251951661463, 0.8454338614967507, 0.84273627706099541, 0.83882614204553196, 0.84506600907369311, 0.83886701453698276, 0.84400332429597136, 0.84469815665063552])
+([120000, 121000, 122000, 123000, 124000, 125000, 126000, 127000, 128000, 129000], [0.86516165070368811, 0.85907164947751335, 0.86415346258123404, 0.86400359677924765, 0.86382648264962736, 0.86457581165955943, 0.86491641575498301, 0.85799534053597459, 0.86626520797286066, 0.86615621466232506], [0.84505238490987611, 0.84145560566220245, 0.84570634477308959, 0.84589708306652678, 0.8426954045695445, 0.83858090709682687, 0.84388070682161886, 0.84254553876755811, 0.8451750023842286, 0.84535211651384889])
+([130000, 131000, 132000, 133000, 134000, 135000, 136000, 137000, 138000, 139000], [0.86245044210411592, 0.85871742121827277, 0.86427608005558665, 0.86668755705118605, 0.86438507336612214, 0.86601997302415568, 0.86377198599435956, 0.86118339486913986, 0.86589735554980307, 0.8628182945271734], [0.84321312279458849, 0.84449379419338144, 0.84464365999536772, 0.84802245262197029, 0.84642842545538766, 0.84046104170356539, 0.84368996852818157, 0.8429406395182496, 0.84656466709355715, 0.84480714996117112])
+([140000, 141000, 142000, 143000, 144000, 145000, 146000, 147000, 148000, 149000], [0.85780460224253741, 0.8601888309105028, 0.86400359677924765, 0.86685104701698934, 0.86197359637052273, 0.86413983841741715, 0.8655158789629287, 0.85980735432362843, 0.86689191950844013, 0.86415346258123404], [0.84212318968923283, 0.84494339159934062, 0.84345835774329347, 0.84670090873172654, 0.84634668047248596, 0.83776345726781021, 0.84261365958664292, 0.84427580757231024, 0.84487527078025582, 0.84589708306652678])
+([150000, 151000, 152000, 153000, 154000, 155000, 156000, 157000, 158000, 159000], [0.85802258886360849, 0.85724601152604263, 0.86431695254703744, 0.86800910094142969, 0.86310440196732929, 0.86536601316094219, 0.86638782544721316, 0.86198722053433974, 0.86675567787027075, 0.86544775814384389], [0.84266815624191072, 0.84430305589994414, 0.8451750023842286, 0.84807694927723809, 0.84847205002792947, 0.83683701412825784, 0.84363547187291377, 0.84330849194130708, 0.84612869385141487, 0.84627855965340126])
+([160000, 161000, 162000, 163000, 164000, 165000, 166000, 167000, 168000, 169000], [0.85988909930653001, 0.86445319418520694, 0.86509352988460331, 0.86498453657406782, 0.86228695213831252, 0.86486191909971522, 0.86494366408261691, 0.86388097930489516, 0.86790010763089409, 0.86457581165955943], [0.84731399610348912, 0.84576084142835728, 0.84506600907369311, 0.84845842586411258, 0.84631943214485217, 0.8403792967206638, 0.84490251910788972, 0.83740922900856962, 0.84721862695677053, 0.84670090873172654])
+([170000, 171000, 172000, 173000, 174000, 175000, 176000, 177000, 178000, 179000], [0.86501178490170161, 0.86205534135342443, 0.86484829493589832, 0.86656493957683345, 0.86093815992043488, 0.86656493957683345, 0.86578836223926758, 0.86310440196732929, 0.86720527527622993, 0.86266842872518701], [0.84735486859494002, 0.84592433139416068, 0.84284527037153101, 0.84878540579571926, 0.84734124443112302, 0.84247741794847342, 0.84461641166773394, 0.83911224948568786, 0.8455564789711032, 0.84749111023310941])
+([180000, 181000, 182000, 183000, 184000, 185000, 186000, 187000, 188000, 189000], [0.8655158789629287, 0.86157849561983135, 0.86641507377484706, 0.86565212060109809, 0.86201446886197364, 0.86704178531042664, 0.86683742285317233, 0.86299540865679369, 0.86807722176051438, 0.86625158380904366], [0.84621043883431657, 0.84381258600253406, 0.84509325740132701, 0.84984809057344102, 0.84629218381721816, 0.842831646207714, 0.84743661357784172, 0.84092426327334158, 0.84473902914208643, 0.84825406340685838])
+([190000, 191000, 192000, 193000, 194000, 195000, 196000, 197000, 198000, 199000], [0.86484829493589832, 0.8627910461995395, 0.86599272469652178, 0.86501178490170161, 0.86123789152440766, 0.86652406708538265, 0.86478017411681352, 0.86191909971525504, 0.86757312769928752, 0.86569299309254899], [0.84821319091540759, 0.84557010313492009, 0.84231392798267013, 0.84582896224744208, 0.8479543318028856, 0.84356735105382907, 0.84810419760487199, 0.83811768552705079, 0.84679627787844525, 0.84757285521601111])

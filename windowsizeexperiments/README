@@ -1,0 +1,6 @@
+Run by pablo
+
+windowsize experiments: size 7 vs. size 9, using 0.4 and 1.0 learning rates. The w7 experiments were run for twice as many iterations to see if things improved: they do, but by 1% or less so it's probably not worth it.
+
+In this folder, the size 7 experiments are cut down to only 99000 words trained so we can compare across windowsizes. The full-length data are in the underlying fulllengthw7 folder.
+

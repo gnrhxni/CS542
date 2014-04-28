@@ -368,8 +368,11 @@ stressPositionalFeatures = {
     '_': [0, 1, 4]
 }
 
-#articFeatures = phonemeVectors;
-MINSTRESS = len(articFeatureNames);
+if (0):
+    articFeatures = phonemeVectors;
+    MINSTRESS = len(phonemeVectors.keys());
+else:
+    MINSTRESS = len(articFeatureNames);
 NSTRESS = len(stressFeatureNames);
 NUMOUTPUTS = MINSTRESS + NSTRESS;
 

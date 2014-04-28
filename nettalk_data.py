@@ -12,6 +12,7 @@ from constants import (
     MINSTRESS,
     NUMOUTPUTS,
     NUMINPUTS,
+    WINDOWSIZE,
     letterToPos,
     topKDatafile,
     articFeatures,
@@ -41,7 +42,7 @@ def dictionary(datafile=defaultdatafile):
                 yield Dictionary_Element._make(match.groups())
 
 
-def wordstream(windowsize=7, input_entries=None, padchar=' '):
+def wordstream(windowsize=WINDOWSIZE, input_entries=None, padchar=' '):
     """Note: middle of each window is (windowsize/2)+1, since python
     automatically floors uneven integer division.
     """

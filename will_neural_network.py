@@ -25,9 +25,9 @@ from nettalk_modules import *
 
 ITERATIONS = 10
 
-def setup(hidden=80, hidden2=0):
+def setup(hidden=80, hidden2=0, forgiving=False):
     print("Setting up network")
-    modules = buildModules(NUMINPUTS, hidden, NUMOUTPUTS, hidden2=hidden2, forgiving=False)
+    modules = buildModules(NUMINPUTS, hidden, NUMOUTPUTS, hidden2=hidden2, forgiving=forgiving)
     neural_network = buildnet(modules)
 #IMPORTANT: IF YOU WANT TO SET YOUR WEIGHTS TO -0.3 to 0.3, please use the following 4 lines
     newWeights = np.random.uniform(-0.3, 0.3, len(neural_network.params))
@@ -120,8 +120,9 @@ def main():
     trainer = BackpropTrainer( net, None, learningrate=lrate, verbose=False, batchlearning=True, weightdecay=0.0)
     modules['hidden'].beta = beta
     modules['hidden'].r = r
-    fname = 'ph_lrate_%.1f_train_%s_test_%s.%d' % (lrate, train, test, int(time.time()))
+    fname = 'w%d_lrate_%.1f_train_%s_test_%s.%d' % (WINDOWSIZE, lrate, train, test, int(time.time()))
     outfile = open(fname,'w')
+    trainNetwork.counter=0
     for i in range(ITERATIONS):
         trainerror = trainNetwork(net, trainer, train, test, outfile, testSkip=testSkip)
         experiment.append(trainerror)

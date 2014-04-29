@@ -38,7 +38,8 @@ def plot(data, xlabel=None, ylabel=None, legend=list(), title=None, save=""):
         args.extend([x, y, symbol])
         
     plt.plot(*args)
-    plt.figure(num=1, figsize=(20,15))
+    plt.figure(num=1, figsize=(12,9))
+    plt.ylim(0, 1.0)
     if xlabel:
         plt.xlabel(xlabel, fontsize=14)
     if ylabel:

@@ -14,5 +14,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provision :shell, :path => "vagrant_setup.sh"
 
+  config.ssh.forward_x11 = true
 
 end

@@ -24,7 +24,7 @@ from prevent_overtraining import PreventOverTrainer
 from nettalk_modules import *
 
 
-ITERATIONS = 10
+WORDSTRAINED
 
 def setup(hidden=80, hidden2=0, forgiving=False):
     print("Setting up network")
@@ -139,7 +139,7 @@ def main():
     fname = 'proportionTrained_%.1f.%d' % (proportion, int(time.time()))
     outfile = open(fname,'w')
     trainNetwork.counter=0
-    while trainNetwork.counter < 110000:
+    while trainNetwork.counter < WORDSTRAINED:
         trainerror = trainNetwork(net, trainer, train, test, outfile, testSkip=testSkip)
         experiment.append(trainerror) 
   for i in experiment:

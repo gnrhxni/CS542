@@ -8,6 +8,7 @@ import pybrain
 import pickle
 import math
 import time
+import random
 from nettalk_data import *
 from constants import *
 from pybrain.datasets import SupervisedDataSet
@@ -23,7 +24,7 @@ from prevent_overtraining import PreventOverTrainer
 from nettalk_modules import *
 
 
-ITERATIONS = 10
+WORDSTRAINED
 
 def setup(hidden=80, hidden2=0, forgiving=False):
     print("Setting up network")
@@ -109,23 +110,38 @@ def main():
   experiment = [];
   hidden=80
   hidden2=0
-  lrate=1.0
+  lrate=0.4
   beta=0
   r=0.5
   testSkip=1000
-  for lrate in (0.4,1.0,0.4,1.0):
-   for (train, test) in (("firsthalf.data","secondhalf.data"),("secondhalf.data","firsthalf.data")):
+  for proportion in (0.1,0.5,0.9,0.1,0.5,0.9,0.1,0.5,0.9):
+   print "Setting up files..."
+   f = open('nettalk.data','r');
+   f1 = open('temptrain','w'); 
+   f2 = open('temptest','w'); 
+   l1 = set()
+   l2 = set()
+# Put all the lines in f in random order into f1 and f2
+# in the proportion described by "proportion"
+   for l in f.readlines():
+     if (random.random() < proportion): l1.add(l)
+     else: l2.add(l);
+   for l in l1: f1.write(l);
+   for l in l2: f2.write(l);
+   f.close(); f1.close(); f2.close();
+   print "done"
+   for (train, test) in (('temptrain','temptest'),):
     (net, modules) = setup(hidden, hidden2)
     #trainer = PreventOverTrainer( net, None, learningrate=lrate, verbose=False, batchlearning=True, weightdecay=0.0)
     trainer = BackpropTrainer( net, None, learningrate=lrate, verbose=False, batchlearning=True, weightdecay=0.0)
     modules['hidden'].beta = beta
     modules['hidden'].r = r
-    fname = 'w%d_lrate_%.1f_train_%s_test_%s.%d' % (WINDOWSIZE, lrate, train, test, int(time.time()))
+    fname = 'proportionTrained_%.1f.%d' % (proportion, int(time.time()))
     outfile = open(fname,'w')
     trainNetwork.counter=0
-    for i in range(ITERATIONS):
+    while trainNetwork.counter < WORDSTRAINED:
         trainerror = trainNetwork(net, trainer, train, test, outfile, testSkip=testSkip)
-        experiment.append(trainerror)
+        experiment.append(trainerror) 
   for i in experiment:
      print i;
 

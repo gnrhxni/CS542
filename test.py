@@ -71,13 +71,21 @@ def test_stressFeatures_length():
     assert len(nettalk_data.stressFeatures) == 6
 
 def test_convertToBinary():
+    results = dict();
     alphabet_length = len(nettalk_data.letterToPos)
-    for word in 'bright couple dinner political over loss size truth'.split():
+    for func in (nettalk_data.convertToBinarySlow, nettalk_data.convertToBinary):
+      results[func] = list();
+      for word in 'bright couple dinner political over loss size truth'.split():
         binrepr = list(
-            chain( *nettalk_data.convertToBinary(word) )
+            chain( *func(word) )
         )
         assert binrepr.count(1) == len(word)
         assert binrepr.count(0) == (alphabet_length-1) * len(word)
+        results[func].append(binrepr);
+    data = [ x for x in results.values() ]
+    for i in xrange(len(data[0])): 
+       assert data[0][i] == data[1][i]
+       print "worked for word number %d" % i
 
 
 def test_binarystream():

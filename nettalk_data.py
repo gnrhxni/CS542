@@ -145,6 +145,16 @@ def createVectorDict(featureDict, length):
     return v;     	
 
 def convertToBinary(words=None):
+    N = len(letterToPos)
+    for word in words:
+        representation = np.zeros(N*len(word))
+        word = word.lower()
+        for i in range(len(word)):
+            representation[N*i+letterToPos[word[i]]] = 1;
+        yield representation;
+
+
+def convertToBinarySlow(words=None):
     for word in words:
         representation = list()
         word = word.lower()
@@ -156,4 +166,3 @@ def convertToBinary(words=None):
                     representation.append(0)
         yield representation
 
-    

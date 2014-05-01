@@ -8,10 +8,13 @@ from pybrain.structure import FullConnection
 from sigmoidsparselayer import SigmoidSparseLayer
 from sigmoidforgivinglayer import SigmoidForgivingLayer
 
-def buildModules(inputs=NUMINPUTS, hidden=80, outputs=NUMOUTPUTS, beta=0, sparsity=0.5, hidden2=0, forgiving=False):
+def buildModules(inputs=NUMINPUTS, hidden=80, outputs=NUMOUTPUTS, beta=0, sparsity=0.5, hidden2=0, forgiving=False, sparse=False):
     mod = dict();
     mod['in'] = LinearLayer(inputs, name='in')
-    mod['hidden'] = SigmoidSparseLayer(dim=hidden, beta=beta, sparsity=sparsity, name='hidden')
+    if (sparse):
+        mod['hidden'] = SigmoidSparseLayer(dim=hidden, beta=beta, sparsity=sparsity, name='hidden')
+    else:
+        mod['hidden'] = SigmoidLayer(dim=hidden, name='hidden')
     if (forgiving):
         mod['out'] = SigmoidForgivingLayer(outputs, name='out')
     else:

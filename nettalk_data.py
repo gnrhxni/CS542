@@ -134,6 +134,18 @@ def closestByDotProduct(features, vectorDict):
 			maxcos = cos;
 			best = k;
 	return best;
+
+def closestByEuclidean(features, vectorDict):
+    nearest = 10000;
+    best = ''
+    for k,v in vectorDict.iteritems():
+        distance = np.linalg.norm(v[0]-features)
+        if(distance < nearest):
+            nearest = distance
+            best = k
+    return best
+
+    
         
 def createVectorDict(featureDict, length):
     v = dict();

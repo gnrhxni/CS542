@@ -50,7 +50,7 @@ def plot(data, xlabel=None, ylabel=None, legend=list(), title=None, save=""):
         assert len(aucs) == len(legend)
         legend = [ "%s (%0.2f/%i)" %(l, auc, ideal)
                    for l, auc in zip(legend, aucs) ]
-        plt.legend(legend, loc="best", fontsize=10)
+        plt.legend(legend, loc="best")#, fontsize=10)
     if title:
         plt.title(title)
     plt.grid(True)

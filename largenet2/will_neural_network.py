@@ -24,11 +24,11 @@ from prevent_overtraining import PreventOverTrainer
 from nettalk_modules import *
 
 
-WORDSTRAINED=100000;
+WORDSTRAINED = 50000;
 
-def setup(hidden=80, hidden2=0, forgivingHidden=False, forgivingOut=False):
+def setup(hidden=80, hidden2=0, forgiving=False):
     print("Setting up network")
-    modules = buildModules(NUMINPUTS, hidden, NUMOUTPUTS, hidden2=hidden2, forgivingHidden=forgivingHidden, forgivingOut=forgivingOut)
+    modules = buildModules(NUMINPUTS, hidden, NUMOUTPUTS, hidden2=hidden2, forgiving=forgiving)
     neural_network = buildnet(modules)
 #IMPORTANT: IF YOU WANT TO SET YOUR WEIGHTS TO -0.3 to 0.3, please use the following 4 lines
     newWeights = np.random.uniform(-0.3, 0.3, len(neural_network.params))
@@ -111,23 +111,20 @@ def main():
   hidden=80
   hidden2=0
   lrate=0.4
-  beta=0
-  r=0.5
   testSkip=1000
-  train="firsthalf.disordered.data";
-  test="secondhalf.disordered.data";
-  for lrate in (0.4,0.4,0.4):
-    for (forgiving1, forgiving2) in ((True,True), (False,False), (False, True), (True, False)):
-      (net, modules) = setup(hidden, forgivingHidden=forgiving1, forgivingOut=forgiving2)
-      trainer = BackpropTrainer( net, None, learningrate=lrate, verbose=False, batchlearning=True, weightdecay=0.0)
-      fname = 'forgiving_%d_%d.%d' % (int(forgiving1),int(forgiving2), int(time.time()))
-      outfile = open(fname,'w')
-      trainNetwork.counter=0
-      while trainNetwork.counter < WORDSTRAINED:
+  train='firsthalf.disordered.data'
+  test='secondhalf.disordered.data'
+  for hidden in (80,120,80,120):
+   print "done"
+   for hidden2 in (0,80,120):
+    (net, modules) = setup(hidden, hidden2)
+    trainer = BackpropTrainer( net, None, learningrate=lrate, verbose=False, batchlearning=True, weightdecay=0.0)
+    fname = 'h_%d_h2_%d.%d' % (hidden, hidden2, int(time.time()))
+    outfile = open(fname,'w')
+    trainNetwork.counter=0
+    while trainNetwork.counter < WORDSTRAINED:
         trainerror = trainNetwork(net, trainer, train, test, outfile, testSkip=testSkip)
         experiment.append(trainerror) 
-      weights = net.params()
-      pickle.dump(weights, open("weights.%s" % fname,"wb"))
   for i in experiment:
      print i;
 

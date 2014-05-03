@@ -1,0 +1,11 @@
+[INFO 1398789193.375716]: Running pass 1
+/n/home13/rschwager/CS542/env/lib/python2.7/site-packages/pybrain/structure/connections/full.py:19: RuntimeWarning: overflow encountered in add
+  outbuf += dot(reshape(self.params, (self.outdim, self.indim)), inbuf)
+/n/home13/rschwager/CS542/weight_decay.py:27: RuntimeWarning: overflow encountered in multiply
+  newderivs = self.module.derivs - (self.weightdecay*self.module.params)
+/n/home13/rschwager/CS542/env/lib/python2.7/site-packages/pybrain/auxiliary/gradientdescent.py:83: RuntimeWarning: invalid value encountered in multiply
+  self.momentumvector *= self.momentum
+[INFO 1398789354.235565]: Running pass 2
+[INFO 1398789525.865743]: Running pass 3
+[INFO 1398789713.936093]: Running pass 4
+[INFO 1398789887.072901]: Running pass 5

@@ -24,11 +24,11 @@ from prevent_overtraining import PreventOverTrainer
 from nettalk_modules import *
 
 
-WORDSTRAINED
+WORDSTRAINED=100000;
 
-def setup(hidden=80, hidden2=0, forgiving=False):
+def setup(hidden=80, hidden2=0, forgivingHidden=False, forgivingOut=False):
     print("Setting up network")
-    modules = buildModules(NUMINPUTS, hidden, NUMOUTPUTS, hidden2=hidden2, forgiving=forgiving)
+    modules = buildModules(NUMINPUTS, hidden, NUMOUTPUTS, hidden2=hidden2, forgivingHidden=forgivingHidden, forgivingOut=forgivingOut)
     neural_network = buildnet(modules)
 #IMPORTANT: IF YOU WANT TO SET YOUR WEIGHTS TO -0.3 to 0.3, please use the following 4 lines
     newWeights = np.random.uniform(-0.3, 0.3, len(neural_network.params))
@@ -114,34 +114,20 @@ def main():
   beta=0
   r=0.5
   testSkip=1000
-  for proportion in (0.1,0.5,0.9,0.1,0.5,0.9,0.1,0.5,0.9):
-   print "Setting up files..."
-   f = open('nettalk.data','r');
-   f1 = open('temptrain','w'); 
-   f2 = open('temptest','w'); 
-   l1 = set()
-   l2 = set()
-# Put all the lines in f in random order into f1 and f2
-# in the proportion described by "proportion"
-   for l in f.readlines():
-     if (random.random() < proportion): l1.add(l)
-     else: l2.add(l);
-   for l in l1: f1.write(l);
-   for l in l2: f2.write(l);
-   f.close(); f1.close(); f2.close();
-   print "done"
-   for (train, test) in (('temptrain','temptest'),):
-    (net, modules) = setup(hidden, hidden2)
-    #trainer = PreventOverTrainer( net, None, learningrate=lrate, verbose=False, batchlearning=True, weightdecay=0.0)
-    trainer = BackpropTrainer( net, None, learningrate=lrate, verbose=False, batchlearning=True, weightdecay=0.0)
-    modules['hidden'].beta = beta
-    modules['hidden'].r = r
-    fname = 'proportionTrained_%.1f.%d' % (proportion, int(time.time()))
-    outfile = open(fname,'w')
-    trainNetwork.counter=0
-    while trainNetwork.counter < WORDSTRAINED:
+  train="firsthalf.disordered.data";
+  test="secondhalf.disordered.data";
+  for lrate in (0.4,0.4,0.4):
+    for (forgiving1, forgiving2) in ((True,True), (False,False), (False, True), (True, False)):
+      (net, modules) = setup(hidden, forgivingHidden=forgiving1, forgivingOut=forgiving2)
+      trainer = BackpropTrainer( net, None, learningrate=lrate, verbose=False, batchlearning=True, weightdecay=0.0)
+      fname = 'forgiving_%d_%d.%d' % (int(forgiving1),int(forgiving2), int(time.time()))
+      outfile = open(fname,'w')
+      trainNetwork.counter=0
+      while trainNetwork.counter < WORDSTRAINED:
         trainerror = trainNetwork(net, trainer, train, test, outfile, testSkip=testSkip)
         experiment.append(trainerror) 
+      weights = net.params()
+      pickle.dump(weights, open("weights.%s" % fname,"wb"))
   for i in experiment:
      print i;
 

@@ -126,7 +126,7 @@ def main():
       while trainNetwork.counter < WORDSTRAINED:
         trainerror = trainNetwork(net, trainer, train, test, outfile, testSkip=testSkip)
         experiment.append(trainerror) 
-      weights = net.params()
+      weights = net.params
       pickle.dump(weights, open("weights.%s" % fname,"wb"))
   for i in experiment:
      print i;

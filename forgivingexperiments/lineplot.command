@@ -1,0 +1,1 @@
+../lineplot.py -L none,none,none,none,none,none,hidden,hidden,hidden,hidden,hidden,hidden,output,output,output,output,output,output,both,both,both,both,both,both,both,both -T "Effect of ignoring errors < none.hidden" -X "Number of words trained" -Y "Generalization performance" _for*

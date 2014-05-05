@@ -24,17 +24,16 @@ from prevent_overtraining import PreventOverTrainer
 from nettalk_modules import *
 
 WORDSTRAINED=25000
-children = []
-master = None
 
 def setup(numNetworks = 1, hidden=80, hidden2=0, forgiving=False):
     child_networks = []
     for i in range(numNetworks):
-        neural_network = buildnet(buildModules(NUMINPUTS, hidden, NUMOUTPUTS, hidden2=hidden2, forgiving=forgiving))
+        neural_network = buildnet(buildModules(NUMINPUTS, hidden, NUMOUTPUTS, hidden2=hidden2))
         newWeights = np.random.uniform(-0.3, 0.3, len(neural_network.params))
         neural_network._setParameters(newWeights)
         child_networks.append(neural_network)
-    master_network = buildnet(buildModules(NUMOUTPUTS*numNetworks, hidden, NUMOUTPUTS, hidden2=hidden2, forgiving=forgiving))
+    #NOTE: master networks input is NUMOUTPUTS*numNetworks as it takes in all the outputs of the children networks as input
+    master_network = buildnet(buildModules(NUMOUTPUTS*numNetworks, hidden, NUMOUTPUTS, hidden2=hidden2))
     newWeights = np.random.uniform(-0.3, 0.3, len(neural_network.params))
     master_network._setParameters(newWeights)
     return (child_networks, master_network)
@@ -60,10 +59,11 @@ def createMasterDataset(words, networks):
             for binary_input in convertToBinary(letter):
                 final_input = []
                 binary_output = output[char_pos]
+                #for each letter, loop through the networks and combine their outputs into one long vector
+                #for use in the the master network
                 for (network, trainer) in networks:
                     final_input = final_input + network.activate(binary_input).tolist()
                 ds.addSample(final_input, binary_output)
-                
                 char_pos+= 1
     return ds
 def testOneWord(children, master_network, word, output=None):
@@ -116,17 +116,19 @@ def trainNetwork(children, master, trainfile, testfile, outfile, testSkip=1000):
         (neural_network, trainer) = children[cycle]
         trainer.setData(createDatasetFromWord(word))
         err = trainer.train()
+        #train one word per each network, then when each network has been trained on one additional word, train the master network
+        #then loop back again
         cycle += 1
         curWords.append(word)
         if cycle == numChildren:
             cycle = 0
             (master_network, master_trainer) = master
-            master_dataset = createMasterDataset(curWords, children)
-            master_trainer.setData(master_dataset)
+            master_trainer.setData(createMasterDataset(curWords, children))
             err = master_trainer.train()
             trainNetwork.counter += numChildren
             curWords = []
-        if (0 > trainNetwork.counter % testSkip):
+        #train the network when the trainNetwork counter is on the closest multiple of numChildren to the testSkip
+        if (numChildren > trainNetwork.counter % testSkip):
             (master_network, master_trainer) = master
             testerror = testWords(children, master_network, testfile);
             ret[0].append(trainNetwork.counter);
@@ -144,7 +146,7 @@ def main():
   lrate=0.4
   beta=0
   r=0.5
-  numNetworks = 4
+  numNetworks = 2
   testSkip=1000
   f = open('nettalk.data','r');
   f1 = open('temptrain','w'); 
@@ -160,15 +162,20 @@ def main():
   for l in l2: f2.write(l);
   f.close(); f1.close(); f2.close();
   for (train, test) in (('temptrain','temptest'),):
+   #setup will create a list of children networks, and a final master networks which takes in their outputs and spits out the final output
    (child_networks, master_network) = setup(numNetworks, hidden, hidden2)
+   children = []
+   #create a trainer for each child network
    for child_network in child_networks:
-       child_trainer = BackpropTrainer(child_network, None, learningrate=lrate, verbose=True, batchlearning=True, weightdecay=0.0)
+       child_trainer = BackpropTrainer(child_network, None, learningrate=lrate, verbose=False, batchlearning=True, weightdecay=0.0)
        children.append((child_network, child_trainer))
-   master_trainer = BackpropTrainer(master_network, None, learningrate=lrate, verbose=True, batchlearning=True, weightdecay=0.0)
+   #create trainer for master network
+   master_trainer = BackpropTrainer(master_network, None, learningrate=lrate, verbose=False, batchlearning=True, weightdecay=0.0)
    master = (master_network, master_trainer) 
    fname = 'numChildren_%.1f.%d' % (numNetworks, int(time.time()))
    outfile = open(fname,'w')
    trainNetwork.counter=0
+   #train network
    while trainNetwork.counter < WORDSTRAINED:
        trainerror = trainNetwork(children, master, train, test, outfile, testSkip=testSkip)
        experiment.append(trainerror) 

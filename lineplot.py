@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 
 
 markers = ['.', 'o', 'v', '2', 'o', '<', '>', 'v']
-colors  = ['r', 'g', 'b', 'c', 'm', 'y', 'k']
+colors  = ['r', 'g', 'b', 'c', 'm', 'y', 'k', 'BlueViolet', 'Burlywood', 'DarkGreen']
 
 # symbols = itertools.cycle(iter(
 #     ''.join(tuple(items))

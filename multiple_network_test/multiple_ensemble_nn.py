@@ -23,20 +23,18 @@ from prevent_overtraining import PreventOverTrainer
 
 from nettalk_modules import *
 
-WORDSTRAINED=100000
-
+WORDSTRAINED=25000
 
 def setup(numNetworks = 1, hidden=80, hidden2=0, forgiving=False):
-    numHiddenUnits = [80, 90, 100, 120, 80]
     child_networks = []
     for i in range(numNetworks):
-        neural_network = buildnet(buildModules(NUMINPUTS, numHiddenUnits[i], NUMOUTPUTS, hidden2=hidden2))
+        neural_network = buildnet(buildModules(NUMINPUTS, hidden, NUMOUTPUTS, hidden2=hidden2))
         newWeights = np.random.uniform(-0.3, 0.3, len(neural_network.params))
         neural_network._setParameters(newWeights)
         child_networks.append(neural_network)
     #NOTE: master networks input is NUMOUTPUTS*numNetworks as it takes in all the outputs of the children networks as input
-    master_network = buildnet(buildModules(NUMOUTPUTS*numNetworks, hidden*numNetworks, NUMOUTPUTS, hidden2=hidden2))
-    newWeights = np.random.uniform(-0.3, 0.3, len(master_network.params))
+    master_network = buildnet(buildModules(NUMOUTPUTS*numNetworks, hidden, NUMOUTPUTS, hidden2=hidden2))
+    newWeights = np.random.uniform(-0.3, 0.3, len(neural_network.params))
     master_network._setParameters(newWeights)
     return (child_networks, master_network)
 
@@ -127,10 +125,10 @@ def trainNetwork(children, master, trainfile, testfile, outfile, testSkip=1000):
             (master_network, master_trainer) = master
             master_trainer.setData(createMasterDataset(curWords, children))
             err = master_trainer.train()
-            trainNetwork.counter += 1
+            trainNetwork.counter += numChildren
             curWords = []
         #train the network when the trainNetwork counter is on the closest multiple of numChildren to the testSkip
-        if (0 == trainNetwork.counter % testSkip):
+        if (numChildren > trainNetwork.counter % testSkip):
             (master_network, master_trainer) = master
             testerror = testWords(children, master_network, testfile);
             ret[0].append(trainNetwork.counter);
@@ -148,8 +146,8 @@ def main():
   lrate=0.4
   beta=0
   r=0.5
-  numNetworks = int(sys.argv[1])
-  testSkip=2000
+  numNetworks = 2
+  testSkip=1000
   f = open('nettalk.data','r');
   f1 = open('temptrain','w'); 
   f2 = open('temptest','w'); 
@@ -181,8 +179,7 @@ def main():
    while trainNetwork.counter < WORDSTRAINED:
        trainerror = trainNetwork(children, master, train, test, outfile, testSkip=testSkip)
        experiment.append(trainerror) 
-   for i in experiment:
-       print i;
+
 
 if __name__ == '__main__':
    main()

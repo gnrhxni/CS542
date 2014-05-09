@@ -117,7 +117,6 @@ def main():
   train="firsthalf.disordered.data";
   test="secondhalf.disordered.data";
   for (iteration) in (1,2):
-    for lrate in (0.8,0.4,1.6,0.2,0.1,3.2):
       (net, modules) = setup(hidden)
       trainer = BackpropTrainer( net, None, learningrate=lrate, verbose=False, batchlearning=True, weightdecay=0.0)
       fname = 'phonemes_lrate_%.2f.%d' % (lrate, int(time.time()))

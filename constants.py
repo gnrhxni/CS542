@@ -368,7 +368,7 @@ stressPositionalFeatures = {
     '_': [0, 1, 4]
 }
 
-if (0):
+if (1):
     articFeatures = phonemeVectors;
     MINSTRESS = len(phonemeVectors.keys());
 else:

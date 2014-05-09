@@ -116,11 +116,11 @@ def main():
   testSkip=1000
   train="firsthalf.disordered.data";
   test="secondhalf.disordered.data";
-  for lrate in (0.4,0.4,0.4):
-    for (forgiving1, forgiving2) in ((True,True), (False,False), (False, True), (True, False)):
-      (net, modules) = setup(hidden, forgivingHidden=forgiving1, forgivingOut=forgiving2)
+  for (iteration) in (1,2):
+    for lrate in (0.8,0.4,1.6,0.2,0.1,3.2):
+      (net, modules) = setup(hidden)
       trainer = BackpropTrainer( net, None, learningrate=lrate, verbose=False, batchlearning=True, weightdecay=0.0)
-      fname = 'forgiving_%d_%d.%d' % (int(forgiving1),int(forgiving2), int(time.time()))
+      fname = 'phonemes_lrate_%.2f.%d' % (lrate, int(time.time()))
       outfile = open(fname,'w')
       trainNetwork.counter=0
       while trainNetwork.counter < WORDSTRAINED:

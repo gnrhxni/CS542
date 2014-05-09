@@ -2,6 +2,13 @@ The nettalk data from the https://archive.ics.uci.edu/ml/datasets/Connectionist+
 and a python function or two to analyze it.
 This is a project for Boston University's CS 542.
 
+In order to run our code, please install the following:
+-Latest version of Python
+-Scipy
+-Numpy
+-matplotlib
+-pybrain
+
 To run the best performance network, please run "./neural_network > neural_network_data". Generalization data will be piped to the file neural_network_data. Another datafile will be created that can be used with lineplot.py to plot a graph of the data (please use python lineplot.py -h to see help options)
 
 Data and/or networks for the various variations we made can be found in the various subfolders. Please note that for the multiple networks network, the proper usage is "python multiple_ensemble_nn.py [num of subnetworks] > multiple_network_data", up to a max of five networks. 
